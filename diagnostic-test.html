@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 Diagnostic Test | [NTU 108] Meta analysis</title>
+  <meta name="description" content="Chapter 1 Diagnostic Test | [NTU 108] Meta analysis" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 Diagnostic Test | [NTU 108] Meta analysis" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 Diagnostic Test | [NTU 108] Meta analysis" />
+  
+  
+  
+
+<meta name="author" content="林先和 杜裕康 張齡尹" />
+
+
+<meta name="date" content="2020-01-04" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="intro.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">[NTU 108] Meta analysis</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Description</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#background"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#reference-book"><i class="fa fa-check"></i>Reference Book</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="diagnostic-test.html"><a href="diagnostic-test.html"><i class="fa fa-check"></i><b>1</b> Diagnostic Test</a><ul>
+<li class="chapter" data-level="" data-path="diagnostic-test.html"><a href="diagnostic-test.html#exercise-1---nishiumra"><i class="fa fa-check"></i>Exercise 1 - Nishiumra</a><ul>
+<li class="chapter" data-level="" data-path="diagnostic-test.html"><a href="diagnostic-test.html#univariate-analysis"><i class="fa fa-check"></i>1.1 Univariate Analysis</a></li>
+<li class="chapter" data-level="" data-path="diagnostic-test.html"><a href="diagnostic-test.html#forest-plot"><i class="fa fa-check"></i>1.2 Forest plot</a></li>
+<li class="chapter" data-level="" data-path="diagnostic-test.html"><a href="diagnostic-test.html#bivariate-analysis"><i class="fa fa-check"></i>1.3 Bivariate Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="diagnostic-test.html"><a href="diagnostic-test.html#exercise-2---tseng"><i class="fa fa-check"></i>Exercise 2 - Tseng</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">[NTU 108] Meta analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="diagnostic-test" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Diagnostic Test</h1>
+<div id="exercise-1---nishiumra" class="section level2 unnumbered">
+<h2>Exercise 1 - Nishiumra</h2>
+<p>In this chapter, we will use <code>mada</code> package to analyze the data, so first we need to use <code>library</code> command to load the add on the package. Then we read the csv file without setting the working directory, you can refer to this chapter <a href="intro.html#intro">2</a>. Table <a href="diagnostic-test.html#tab:nishimura-data">1.1</a> is the first 5 rows of Nishiumra data.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">library</span>(mada)</a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="co"># Read data</span></a>
+<a class="sourceLine" id="cb1-4" title="4">nishimura &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;C:/Users/User/Desktop/研究所/碩二上/助教. 統合分析/Diagnostic Test/Nishimura-2007.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="kw">print</span>(nishimura)</a></code></pre></div>
+<table>
+<caption><span id="tab:nishimura-data">Table 1.1: </span>A table of the first 5 rows of Nishiumra data.</caption>
+<thead>
+<tr class="header">
+<th align="left">test</th>
+<th align="left">study_id</th>
+<th align="left">ccpgeneration</th>
+<th align="right">TP</th>
+<th align="right">FP</th>
+<th align="right">FN</th>
+<th align="right">TN</th>
+<th align="right">sens</th>
+<th align="right">spec</th>
+<th align="right">id</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Anti-CCP</td>
+<td align="left">Aotsuka 2005</td>
+<td align="left">CCP2</td>
+<td align="right">115</td>
+<td align="right">17</td>
+<td align="right">16</td>
+<td align="right">73</td>
+<td align="right">0.878</td>
+<td align="right">0.811</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Anti-CCP</td>
+<td align="left">Bas 2003</td>
+<td align="left">CCP1</td>
+<td align="right">110</td>
+<td align="right">24</td>
+<td align="right">86</td>
+<td align="right">215</td>
+<td align="right">0.561</td>
+<td align="right">0.900</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="left">Anti-CCP</td>
+<td align="left">Bizzaro 2001</td>
+<td align="left">CCP1</td>
+<td align="right">40</td>
+<td align="right">5</td>
+<td align="right">58</td>
+<td align="right">227</td>
+<td align="right">0.408</td>
+<td align="right">0.978</td>
+<td align="right">3</td>
+</tr>
+<tr class="even">
+<td align="left">Anti-CCP</td>
+<td align="left">Bombardieri 2004</td>
+<td align="left">CCP2</td>
+<td align="right">23</td>
+<td align="right">0</td>
+<td align="right">7</td>
+<td align="right">39</td>
+<td align="right">0.767</td>
+<td align="right">1.000</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="left">Anti-CCP</td>
+<td align="left">Choi 2005</td>
+<td align="left">CCP2</td>
+<td align="right">236</td>
+<td align="right">20</td>
+<td align="right">88</td>
+<td align="right">231</td>
+<td align="right">0.728</td>
+<td align="right">0.920</td>
+<td align="right">5</td>
+</tr>
+</tbody>
+</table>
+<div id="univariate-analysis" class="section level3 unnumbered">
+<h3>1.1 Univariate Analysis</h3>
+<p>First of all, use the <code>madad</code> command to conduct a meta analysis by using univariate model, and save the results in the object “madad.nishimura”</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="co">## Univariate Analysis ##</span></a>
+<a class="sourceLine" id="cb2-2" title="2">madad.nishimura &lt;-<span class="st"> </span><span class="kw">madad</span>(nishimura)</a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="kw">print</span>(madad.nishimura)</a></code></pre></div>
+<pre><code>## Descriptive summary of nishimura with 37 primary studies.
+## Confidence level for all calculations set to 95 %
+## Using a continuity correction of 0.5 if applicable 
+## 
+## Diagnostic accuracies 
+##        sens  2.5% 97.5%  spec  2.5% 97.5%
+##  [1,] 0.875 0.808 0.921 0.808 0.715 0.876
+##  [2,] 0.561 0.491 0.628 0.898 0.853 0.930
+##  [3,] 0.409 0.317 0.508 0.976 0.948 0.989
+##  [4,] 0.758 0.585 0.875 0.988 0.891 0.999
+##  [5,] 0.728 0.677 0.773 0.919 0.878 0.946
+##  [6,] 0.898 0.814 0.946 0.919 0.862 0.954
+##  [7,] 0.752 0.667 0.821 0.969 0.927 0.987
+##  [8,] 0.642 0.560 0.716 0.981 0.941 0.994
+##  [9,] 0.583 0.451 0.705 0.993 0.940 0.999
+## [10,] 0.790 0.693 0.862 0.819 0.687 0.904
+## [11,] 0.708 0.546 0.831 0.942 0.829 0.982
+## [12,] 0.407 0.318 0.501 0.988 0.948 0.997
+## [13,] 0.801 0.706 0.871 0.976 0.948 0.990
+## [14,] 0.630 0.570 0.685 0.912 0.839 0.954
+## [15,] 0.631 0.480 0.760 0.646 0.447 0.804
+## [16,] 0.427 0.368 0.488 0.971 0.924 0.989
+## [17,] 0.564 0.423 0.695 0.974 0.895 0.994
+## [18,] 0.806 0.706 0.878 0.953 0.923 0.972
+## [19,] 0.550 0.464 0.633 0.964 0.890 0.989
+## [20,] 0.659 0.563 0.743 0.901 0.842 0.940
+## [21,] 0.987 0.888 0.999 0.955 0.883 0.983
+## [22,] 0.413 0.322 0.509 0.975 0.922 0.992
+## [23,] 0.577 0.516 0.636 0.939 0.881 0.969
+## [24,] 0.806 0.743 0.857 0.910 0.845 0.950
+## [25,] 0.699 0.581 0.795 0.980 0.961 0.990
+## [26,] 0.570 0.422 0.706 0.958 0.891 0.984
+## [27,] 0.466 0.364 0.570 0.927 0.876 0.958
+## [28,] 0.739 0.679 0.791 0.944 0.919 0.961
+## [29,] 0.483 0.405 0.563 0.954 0.924 0.972
+## [30,] 0.441 0.239 0.665 0.954 0.862 0.986
+## [31,] 0.875 0.845 0.900 0.888 0.838 0.924
+## [32,] 0.644 0.587 0.696 0.970 0.949 0.983
+## [33,] 0.536 0.457 0.613 0.957 0.929 0.975
+## [34,] 0.774 0.749 0.798 0.965 0.957 0.972
+## [35,] 0.579 0.516 0.639 0.984 0.968 0.992
+## [36,] 0.393 0.324 0.466 0.960 0.914 0.982
+## [37,] 0.471 0.402 0.542 0.977 0.954 0.988
+## 
+## Test for equality of sensitivities: 
+## X-squared = 632, df = 36, p-value = &lt;2e-16
+## Test for equality of specificities: 
+## X-squared = 235, df = 36, p-value = &lt;2e-16
+## 
+## 
+## Diagnostic OR and likelihood ratios 
+##           DOR  2.5%    97.5% posLR  2.5%   97.5% negLR  2.5% 97.5%
+##  [1,]   29.40 14.12    61.21  4.55  2.97    6.97 0.155 0.097 0.246
+##  [2,]   11.24  6.79    18.60  5.50  3.70    8.16 0.489 0.415 0.576
+##  [3,]   28.64 11.23    73.01 17.33  7.34   40.92 0.605 0.513 0.714
+##  [4,]  247.53 13.51  4534.35 60.65  3.83  959.72 0.245 0.131 0.457
+##  [5,]   30.18 18.06    50.43  8.95  5.88   13.62 0.296 0.247 0.355
+##  [6,]   99.46 39.20   252.37 11.08  6.34   19.38 0.111 0.059 0.211
+##  [7,]   96.07 34.42   268.18 24.57  9.84   61.37 0.256 0.187 0.350
+##  [8,]   92.83 25.35   339.93 33.89  9.87  116.41 0.365 0.292 0.456
+##  [9,]  211.40 12.44  3593.41 88.67  5.55 1417.63 0.419 0.306 0.575
+## [10,]   17.02  6.90    41.96  4.37  2.35    8.10 0.257 0.168 0.393
+## [11,]   39.34  9.09   170.36 12.18  3.59   41.31 0.310 0.185 0.518
+## [12,]   55.03 10.51   288.21 33.06  6.63  164.90 0.601 0.513 0.704
+## [13,]  167.37 61.90   452.51 34.09 14.83   78.35 0.204 0.134 0.310
+## [14,]   17.70  8.39    37.35  7.19  3.76   13.75 0.406 0.343 0.480
+## [15,]    3.12  1.10     8.87  1.78  0.99    3.21 0.571 0.349 0.937
+## [16,]   25.19  8.46    75.02 14.87  5.25   42.16 0.590 0.529 0.659
+## [17,]   48.69  8.71   272.15 21.80  4.40  107.92 0.448 0.323 0.621
+## [18,]   84.23 39.19   181.03 17.13 10.24   28.63 0.203 0.130 0.318
+## [19,]   32.51  8.78   120.38 15.18  4.45   51.77 0.467 0.384 0.568
+## [20,]   17.63  8.96    34.70  6.68  4.02   11.10 0.379 0.288 0.497
+## [21,] 1617.00 81.42 32114.41 21.72  7.80   60.48 0.013 0.001 0.211
+## [22,]   27.12  7.28   101.04 16.34  4.70   56.77 0.603 0.511 0.711
+## [23,]   20.84  9.57    45.41  9.39  4.66   18.93 0.450 0.388 0.523
+## [24,]   42.14 20.26    87.65  8.98  5.02   16.06 0.213 0.158 0.288
+## [25,]  116.01 47.68   282.27 35.67 17.27   73.70 0.307 0.214 0.442
+## [26,]   30.08  8.80   102.81 13.51  4.69   38.91 0.449 0.318 0.635
+## [27,]   11.10  5.33    23.10  6.40  3.51   11.66 0.576 0.472 0.705
+## [28,]   47.44 29.08    77.39 13.11  8.99   19.13 0.276 0.222 0.344
+## [29,]   19.26 10.39    35.68 10.43  6.15   17.71 0.542 0.463 0.634
+## [30,]   16.26  3.32    79.74  9.53  2.54   35.80 0.586 0.383 0.898
+## [31,]   55.49 33.71    91.32  7.79  5.31   11.41 0.140 0.112 0.176
+## [32,]   59.01 32.03   108.71 21.68 12.47   37.67 0.367 0.315 0.428
+## [33,]   25.77 13.72    48.41 12.50  7.27   21.50 0.485 0.409 0.576
+## [34,]   95.65 73.46   124.55 22.38 17.99   27.84 0.234 0.210 0.261
+## [35,]   85.12 39.59   183.00 36.43 17.77   74.70 0.428 0.369 0.496
+## [36,]   15.69  6.35    38.77  9.92  4.29   22.97 0.632 0.559 0.715
+## [37,]   37.27 17.12    81.11 20.17  9.79   41.57 0.541 0.473 0.619
+## 
+## Correlation of sensitivities and false positive rates: 
+##    rho  2.5 % 97.5 % 
+##  0.273 -0.056  0.548</code></pre>
+</div>
+<div id="forest-plot" class="section level3 unnumbered">
+<h3>1.2 Forest plot</h3>
+<p>The <code>split.screen</code> function is used to split a plotting window into different rectangular sections called “screens”. Then use the <code>forest</code> command to draw the forest plot. Figure <a href="diagnostic-test.html#fig:Nishiumra-UM-FP">1.1</a> is the forest plot of Nishiumra data.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">split.screen</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="kw">screen</span>(<span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="kw">forest</span>(madad.nishimura, <span class="dt">type =</span> <span class="st">&quot;sens&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Sensitivity&quot;</span>, <span class="dt">cex =</span> <span class="fl">.8</span>, <span class="dt">snames =</span> nishimura<span class="op">$</span>study_id)</a>
+<a class="sourceLine" id="cb4-4" title="4"></a>
+<a class="sourceLine" id="cb4-5" title="5"><span class="kw">screen</span>(<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb4-6" title="6"><span class="kw">forest</span>(madad.nishimura, <span class="dt">type =</span> <span class="st">&quot;spec&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Specificity&quot;</span>, <span class="dt">cex =</span> <span class="fl">.8</span>, <span class="dt">snames =</span> nishimura<span class="op">$</span>study_id)</a>
+<a class="sourceLine" id="cb4-7" title="7"></a>
+<a class="sourceLine" id="cb4-8" title="8"><span class="kw">close.screen</span>(<span class="dt">all.screens =</span> T)</a></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:Nishiumra-UM-FP"></span>
+<img src="images/Nishiumra-UM-FP-1.png" alt="The forest plot of Nishiumra data."  />
+<p class="caption">
+Figure 1.1: The forest plot of Nishiumra data.
+</p>
+</div>
+</div>
+<div id="bivariate-analysis" class="section level3 unnumbered">
+<h3>1.3 Bivariate Analysis</h3>
+<p>Secondly, use the <code>reitsma</code> command to conduct a meta analysis by using bivariate model, and save the results in the object “bi.nishimura”.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="co">## Bivariate Analysis ##</span></a>
+<a class="sourceLine" id="cb5-2" title="2">bi.nishimura &lt;-<span class="st"> </span><span class="kw">reitsma</span>(nishimura)</a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="kw">summary</span>(bi.nishimura)</a></code></pre></div>
+<pre><code>## Call:  reitsma.default(data = nishimura)
+## 
+## Bivariate diagnostic random-effects meta-analysis
+## Estimation method: REML
+## 
+## Fixed-effects coefficients
+##                   Estimate Std. Error       z Pr(&gt;|z|) 95%ci.lb 95%ci.ub    
+## tsens.(Intercept)    0.606      0.118   5.123    0.000    0.374    0.838 ***
+## tfpr.(Intercept)    -2.941      0.137 -21.540    0.000   -3.209   -2.674 ***
+## sensitivity          0.647          -       -        -    0.593    0.698    
+## false pos. rate      0.050          -       -        -    0.039    0.065    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1 
+## 
+## Variance components: between-studies Std. Dev and correlation matrix
+##       Std. Dev tsens  tfpr
+## tsens    0.676 1.000     .
+## tfpr     0.708 0.495 1.000
+## 
+##   logLik      AIC      BIC 
+##   91.644 -173.287 -161.767 
+## 
+## AUC:  0.916
+## Partial AUC (restricted to observed FPRs and normalized):  0.813
+## 
+## HSROC parameters 
+##       Theta      Lambda        beta sigma2theta sigma2alpha 
+##      -1.128       3.496       0.045       0.358       0.483</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="co">## SROC ##</span></a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="kw">plot</span>(bi.nishimura, <span class="dt">sroclwd =</span> <span class="dv">2</span>, <span class="dt">main =</span> <span class="st">&quot;SROC curve (bivariate model) for Nishimura data&quot;</span>, <span class="dt">pch =</span> <span class="dv">16</span>)</a>
+<a class="sourceLine" id="cb7-3" title="3"></a>
+<a class="sourceLine" id="cb7-4" title="4"><span class="kw">points</span>(<span class="kw">fpr</span>(nishimura), <span class="kw">sens</span>(nishimura), <span class="dt">pch =</span> <span class="dv">1</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</a>
+<a class="sourceLine" id="cb7-5" title="5"></a>
+<a class="sourceLine" id="cb7-6" title="6"><span class="kw">legend</span>(<span class="st">&quot;bottomright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;summary estimate&quot;</span>), <span class="dt">pch =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">16</span>), <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;black&quot;</span>))</a>
+<a class="sourceLine" id="cb7-7" title="7"></a>
+<a class="sourceLine" id="cb7-8" title="8"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;SROC&quot;</span>, <span class="st">&quot;conf. region&quot;</span>), <span class="dt">lwd =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>))</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+</div>
+<div id="exercise-2---tseng" class="section level2 unnumbered">
+<h2>Exercise 2 - Tseng</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="co"># Read data</span></a>
+<a class="sourceLine" id="cb8-2" title="2">tseng &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;C:/Users/User/Desktop/研究所/碩二上/助教. 統合分析/Diagnostic Test/Tseng.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb8-3" title="3"><span class="kw">print</span>(tseng)</a></code></pre></div>
+<table>
+<caption><span id="tab:Tseng-data">Table 1.2: </span>A table of the first 5 rows of Tseng data.</caption>
+<thead>
+<tr class="header">
+<th align="left">id</th>
+<th align="right">TP</th>
+<th align="right">FP</th>
+<th align="right">FN</th>
+<th align="right">TN</th>
+<th align="left">country</th>
+<th align="right">male…</th>
+<th align="right">smoker…</th>
+<th align="right">sens…</th>
+<th align="right">spec…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Toyoda et al, 2008</td>
+<td align="right">40</td>
+<td align="right">528</td>
+<td align="right">5</td>
+<td align="right">6610</td>
+<td align="left">Japan</td>
+<td align="right">59</td>
+<td align="right">78</td>
+<td align="right">88.9</td>
+<td align="right">92.6</td>
+</tr>
+<tr class="even">
+<td align="left">Veronesi et al, 2008</td>
+<td align="right">55</td>
+<td align="right">7</td>
+<td align="right">20</td>
+<td align="right">5119</td>
+<td align="left">Italy</td>
+<td align="right">66</td>
+<td align="right">80</td>
+<td align="right">73.3</td>
+<td align="right">99.9</td>
+</tr>
+<tr class="odd">
+<td align="left">Menezes et al, 2009</td>
+<td align="right">50</td>
+<td align="right">17</td>
+<td align="right">7</td>
+<td align="right">2592</td>
+<td align="left">Canada</td>
+<td align="right">54</td>
+<td align="right">87</td>
+<td align="right">87.7</td>
+<td align="right">99.3</td>
+</tr>
+<tr class="even">
+<td align="left">van Klaveren et al, 2009</td>
+<td align="right">70</td>
+<td align="right">1500</td>
+<td align="right">30</td>
+<td align="right">5957</td>
+<td align="left">Dutch</td>
+<td align="right">84</td>
+<td align="right">100</td>
+<td align="right">70.0</td>
+<td align="right">79.9</td>
+</tr>
+<tr class="odd">
+<td align="left">Aberle et al, 2011</td>
+<td align="right">270</td>
+<td align="right">6921</td>
+<td align="right">6</td>
+<td align="right">19112</td>
+<td align="left">American</td>
+<td align="right">59</td>
+<td align="right">100</td>
+<td align="right">97.8</td>
+<td align="right">73.4</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="intro.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-Diagnostic_Test.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
