@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Binary and Continuous data | [NTU 108] Meta analysis</title>
+  <meta name="description" content="Chapter 2 Binary and Continuous data | [NTU 108] Meta analysis" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Binary and Continuous data | [NTU 108] Meta analysis" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="wsxqaza12/NTU-108-Meta-Analysis" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Binary and Continuous data | [NTU 108] Meta analysis" />
+  
+  
+  
+
+<meta name="author" content="林先和 杜裕康 張齡尹" />
+
+
+<meta name="date" content="2020-01-05" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="strart-r.html"/>
+<link rel="next" href="diagnostic-test.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link rel="icon" href="images/LOGO.ico" type="image/x-icon" / >
+<link rel="shortcut icon" href="images/LOGO.ico" type="image/x-icon" / >
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">[NTU 108] Meta analysis</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Description</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#background"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#reference-book"><i class="fa fa-check"></i>Reference Book</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="strart-r.html"><a href="strart-r.html"><i class="fa fa-check"></i><b>1</b> Strart R</a><ul>
+<li class="chapter" data-level="1.1" data-path="strart-r.html"><a href="strart-r.html#introduction"><i class="fa fa-check"></i><b>1.1</b> Introduction</a><ul>
+<li class="chapter" data-level="" data-path="strart-r.html"><a href="strart-r.html#installing-r-rstudio"><i class="fa fa-check"></i>Installing R &amp; RStudio</a></li>
+<li class="chapter" data-level="" data-path="strart-r.html"><a href="strart-r.html#start-r"><i class="fa fa-check"></i>Start R!</a></li>
+<li class="chapter" data-level="" data-path="strart-r.html"><a href="strart-r.html#open-script"><i class="fa fa-check"></i>Open script</a></li>
+<li class="chapter" data-level="" data-path="strart-r.html"><a href="strart-r.html#install-packages"><i class="fa fa-check"></i>Install packages</a></li>
+<li class="chapter" data-level="" data-path="strart-r.html"><a href="strart-r.html#getting-help"><i class="fa fa-check"></i>Getting help</a></li>
+<li class="chapter" data-level="" data-path="strart-r.html"><a href="strart-r.html#read-data"><i class="fa fa-check"></i>Read data</a></li>
+<li class="chapter" data-level="" data-path="strart-r.html"><a href="strart-r.html#save-and-open-a-r-file-.rdata"><i class="fa fa-check"></i>Save and open a R file (.RData)</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="strart-r.html"><a href="strart-r.html#meta-metafor-packages"><i class="fa fa-check"></i><b>1.2</b> <code>meta</code> &amp; <code>metafor</code> packages</a><ul>
+<li><a href="strart-r.html#brief-introduction-of-meta-packages">Brief introduction of <code>meta</code> packages</a></li>
+<li><a href="strart-r.html#brief-introduction-of-metafor-packages">Brief introduction of <code>metafor</code> packages</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="binary-and-continuous-data.html"><a href="binary-and-continuous-data.html"><i class="fa fa-check"></i><b>2</b> Binary and Continuous data</a><ul>
+<li class="chapter" data-level="" data-path="binary-and-continuous-data.html"><a href="binary-and-continuous-data.html#example-1---binary-data"><i class="fa fa-check"></i>Example 1 - Binary data</a><ul>
+<li class="chapter" data-level="" data-path="binary-and-continuous-data.html"><a href="binary-and-continuous-data.html#a.-four-variables-2x2-data"><i class="fa fa-check"></i>1a. Four variables (2x2 data)</a></li>
+<li class="chapter" data-level="" data-path="binary-and-continuous-data.html"><a href="binary-and-continuous-data.html#b.-two-variables"><i class="fa fa-check"></i>1b. Two variables</a></li>
+<li class="chapter" data-level="" data-path="binary-and-continuous-data.html"><a href="binary-and-continuous-data.html#c.-alternative-methods-for-fixed-effect-analysis"><i class="fa fa-check"></i>1c. Alternative methods for fixed-effect analysis</a></li>
+<li class="chapter" data-level="" data-path="binary-and-continuous-data.html"><a href="binary-and-continuous-data.html#d.-random-effects-model"><i class="fa fa-check"></i>1d. Random-effects model</a></li>
+<li class="chapter" data-level="" data-path="binary-and-continuous-data.html"><a href="binary-and-continuous-data.html#e.-heterogeneity-assessment"><i class="fa fa-check"></i>1e. Heterogeneity assessment</a></li>
+<li class="chapter" data-level="" data-path="binary-and-continuous-data.html"><a href="binary-and-continuous-data.html#f.-exploring-the-source-of-heterogeneity"><i class="fa fa-check"></i>1f. Exploring the source of heterogeneity</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="binary-and-continuous-data.html"><a href="binary-and-continuous-data.html#example-2---rimonabant"><i class="fa fa-check"></i>Example 2 - Rimonabant</a><ul>
+<li class="chapter" data-level="" data-path="binary-and-continuous-data.html"><a href="binary-and-continuous-data.html#a.-six-variables"><i class="fa fa-check"></i>2a. Six variables</a></li>
+<li class="chapter" data-level="" data-path="binary-and-continuous-data.html"><a href="binary-and-continuous-data.html#b.-two-or-three-variables"><i class="fa fa-check"></i>2b. Two or three variables</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="binary-and-continuous-data.html"><a href="binary-and-continuous-data.html#example-3---passive-smoking"><i class="fa fa-check"></i>Example 3 - Passive smoking</a><ul>
+<li class="chapter" data-level="" data-path="binary-and-continuous-data.html"><a href="binary-and-continuous-data.html#a.-funnel-plot-using-the-original-odds-ratio"><i class="fa fa-check"></i>3a. Funnel plot using the original odds ratio</a></li>
+<li class="chapter" data-level="" data-path="binary-and-continuous-data.html"><a href="binary-and-continuous-data.html#b.-contour-enhanced-funnel-plot"><i class="fa fa-check"></i>3b. Contour-enhanced funnel plot</a></li>
+<li class="chapter" data-level="" data-path="binary-and-continuous-data.html"><a href="binary-and-continuous-data.html#c.-statistical-test-for-funnel-plot-asymmetry"><i class="fa fa-check"></i>3c. Statistical test for funnel plot asymmetry</a></li>
+<li class="chapter" data-level="" data-path="binary-and-continuous-data.html"><a href="binary-and-continuous-data.html#d.-using-the-trim-and-fill-method"><i class="fa fa-check"></i>3d. Using the trim and fill method</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="diagnostic-test.html"><a href="diagnostic-test.html"><i class="fa fa-check"></i><b>3</b> Diagnostic Test</a><ul>
+<li class="chapter" data-level="" data-path="diagnostic-test.html"><a href="diagnostic-test.html#exercise-1---nishiumra"><i class="fa fa-check"></i>Exercise 1 - Nishiumra</a><ul>
+<li class="chapter" data-level="" data-path="diagnostic-test.html"><a href="diagnostic-test.html#a.-univariate-analysis"><i class="fa fa-check"></i>1a. Univariate Analysis</a></li>
+<li class="chapter" data-level="" data-path="diagnostic-test.html"><a href="diagnostic-test.html#b.-forest-plot"><i class="fa fa-check"></i>1b. Forest plot</a></li>
+<li class="chapter" data-level="" data-path="diagnostic-test.html"><a href="diagnostic-test.html#c.-bivariate-analysis"><i class="fa fa-check"></i>1c. Bivariate Analysis</a></li>
+<li class="chapter" data-level="" data-path="diagnostic-test.html"><a href="diagnostic-test.html#d.-sroc"><i class="fa fa-check"></i>1d. SROC</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="diagnostic-test.html"><a href="diagnostic-test.html#exercise-2---tseng"><i class="fa fa-check"></i>Exercise 2 - Tseng</a><ul>
+<li class="chapter" data-level="" data-path="diagnostic-test.html"><a href="diagnostic-test.html#a.-univariate-analysis-1"><i class="fa fa-check"></i>2a. Univariate Analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="prevalence-incidence-and-survival-data.html"><a href="prevalence-incidence-and-survival-data.html"><i class="fa fa-check"></i><b>4</b> Prevalence, Incidence, and Survival data</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/wsxqaza12/NTU-108-Meta-Analysis" target="blank">Published in Github</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">[NTU 108] Meta analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="binary-and-continuous-data" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Binary and Continuous data</h1>
+<div id="example-1---binary-data" class="section level2 unnumbered">
+<h2>Example 1 - Binary data</h2>
+<p><strong>Binary data: BCG example (Read the paper by Colditz JAMA 1994 for details)</strong></p>
+<p>Using command <code>metabin</code> in the <code>meta</code> package</p>
+<p>Read in the data</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">bcg &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;C:/Users/User/Desktop/研究所/碩二上/助教. 統合分析/107_Lab_day1/bcg.csv&quot;</span>)</a></code></pre></div>
+<table>
+<caption><span id="tab:unnamed-chunk-3">Table 2.1: </span>A table of the first 5 rows of bcg data.</caption>
+<thead>
+<tr class="header">
+<th align="right">trial</th>
+<th align="left">trialnam</th>
+<th align="left">authors</th>
+<th align="right">pubyr</th>
+<th align="right">startyr</th>
+<th align="right">latitude</th>
+<th align="right">alloc</th>
+<th align="right">tcases</th>
+<th align="right">tnoncases</th>
+<th align="right">ccases</th>
+<th align="right">cnoncases</th>
+<th align="right">ttotal</th>
+<th align="right">ctotal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">Northern USA</td>
+<td align="left">Aronson</td>
+<td align="right">1948</td>
+<td align="right">1935</td>
+<td align="right">52</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">119</td>
+<td align="right">11</td>
+<td align="right">128</td>
+<td align="right">123</td>
+<td align="right">139</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">Canada</td>
+<td align="left">Ferguson &amp; Simes</td>
+<td align="right">1949</td>
+<td align="right">1933</td>
+<td align="right">55</td>
+<td align="right">1</td>
+<td align="right">6</td>
+<td align="right">300</td>
+<td align="right">29</td>
+<td align="right">274</td>
+<td align="right">306</td>
+<td align="right">303</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">UK</td>
+<td align="left">Hart &amp; Sutherland</td>
+<td align="right">1977</td>
+<td align="right">1950</td>
+<td align="right">53</td>
+<td align="right">1</td>
+<td align="right">62</td>
+<td align="right">13536</td>
+<td align="right">248</td>
+<td align="right">12619</td>
+<td align="right">13598</td>
+<td align="right">12867</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">Madanapalle</td>
+<td align="left">Frimont-Moller et al</td>
+<td align="right">1973</td>
+<td align="right">1950</td>
+<td align="right">13</td>
+<td align="right">0</td>
+<td align="right">33</td>
+<td align="right">5036</td>
+<td align="right">47</td>
+<td align="right">5761</td>
+<td align="right">5069</td>
+<td align="right">5808</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="left">Haiti</td>
+<td align="left">Vandeviere et al</td>
+<td align="right">1973</td>
+<td align="right">1965</td>
+<td align="right">18</td>
+<td align="right">1</td>
+<td align="right">8</td>
+<td align="right">2537</td>
+<td align="right">10</td>
+<td align="right">619</td>
+<td align="right">2545</td>
+<td align="right">629</td>
+</tr>
+</tbody>
+</table>
+<strong>Some study-level covariates of interest:</strong>
+<table class="table" style="font-size: 14px; width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+Covariates
+</th>
+<th style="text-align:left;">
+Meaning
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+pubyr
+</td>
+<td style="text-align:left;">
+year of publication
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+startyr
+</td>
+<td style="text-align:left;">
+year of start of trial
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+latitude
+</td>
+<td style="text-align:left;">
+latitude of study
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+alloc
+</td>
+<td style="text-align:left;">
+method of allocation. (1:random allocation, 0:Alternation/systematic allocation)
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>For binary (count) data, <code>metabin</code> requires either two or four variables to be declared.</strong></p>
+<div id="a.-four-variables-2x2-data" class="section level3 unnumbered">
+<h3>1a. Four variables (2x2 data)</h3>
+<p>The four-variable command is for the raw binary data (usually from a trial), and the order has to be: the number of events in the treatment group, the number of subjects in the treatment group, the number of events in the control group, the number of subjects in the control group. A number of options are available for this command.</p>
+<p>Now type:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">library</span>(meta)</a>
+<a class="sourceLine" id="cb2-2" title="2">bcg.iv &lt;-<span class="st"> </span><span class="kw">metabin</span>(tcases,ttotal,ccases,ctotal,<span class="dt">studlab=</span>trialnam,<span class="dt">method=</span><span class="st">&quot;I&quot;</span>,<span class="dt">sm=</span><span class="st">&quot;RR&quot;</span>,<span class="dt">data=</span>bcg)</a></code></pre></div>
+<p>First use <code>library</code> command to load the add-on <code>meta</code> package, then use the <code>metabin</code> command to conduct a meta-analysis, and save the results in the object <code>bcg.iv</code>.</p>
+You can specify the type of summary measure you want to use: <code>sm=("RR", "OR", "RD")</code>
+<table class="table" style="font-size: 14px; width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+Summary measures
+</th>
+<th style="text-align:left;">
+R code
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Risk ratio
+</td>
+<td style="text-align:left;">
+sm=“RR”
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Odds ratio
+</td>
+<td style="text-align:left;">
+sm=“OR”
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Risk difference
+</td>
+<td style="text-align:left;">
+sm=“RD”
+</td>
+</tr>
+</tbody>
+</table>
+<p>And the statistical methods for pooling: <code>method=("Inverse", "MH", "Peto")</code>.</p>
+<p>Then type <code>bcg.iv</code> to call the results of the analysis.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">bcg.iv</a></code></pre></div>
+<pre><code>##                    RR           95%-CI %W(fixed) %W(random)
+## Northern USA   0.4109 [0.1343; 1.2574]       0.7        6.3
+## Canada         0.2049 [0.0863; 0.4864]       1.1        7.7
+## UK             0.2366 [0.1793; 0.3121]      10.8       11.1
+## Madanapalle    0.8045 [0.5163; 1.2536]       4.2       10.3
+## Haiti          0.1977 [0.0784; 0.4989]       1.0        7.3
+## Madras         1.0120 [0.8946; 1.1449]      54.6       11.5
+## South Africa   0.6254 [0.3926; 0.9962]       3.8       10.1
+## Chicago        0.2538 [0.1494; 0.4310]       3.0        9.8
+## Puerto Rico    0.7122 [0.5725; 0.8860]      17.4       11.3
+## Georgia (Sch)  1.5619 [0.3737; 6.5284]       0.4        4.9
+## Georgia (Comm) 0.9828 [0.5821; 1.6593]       3.0        9.8
+## 
+## Number of studies combined: k = 11
+## 
+##                          RR           95%-CI     z  p-value
+## Fixed effect model   0.7305 [0.6668; 0.8002] -6.75 &lt; 0.0001
+## Random effects model 0.5080 [0.3361; 0.7679] -3.21   0.0013
+## 
+## Quantifying heterogeneity:
+##  tau^2 = 0.3818 [0.1425; 1.5389]; tau = 0.6179 [0.3774; 1.2405];
+##  I^2 = 92.0% [87.7%; 94.8%]; H = 3.54 [2.86; 4.40]
+## 
+## Test of heterogeneity:
+##       Q d.f.  p-value
+##  125.63   10 &lt; 0.0001
+## 
+## Details on meta-analytical method:
+## - Inverse variance method
+## - DerSimonian-Laird estimator for tau^2
+## - Jackson method for confidence interval of tau^2 and tau</code></pre>
+<p>To draw the forest plot, type:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">forest</span>(bcg.iv)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-9-1.png" width="\maxwidth" /></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">forest</span>(bcg.iv, <span class="dt">comb.random=</span>F, <span class="dt">hetstat=</span><span class="ot">FALSE</span>)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-9-2.png" width="\maxwidth" /></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">forest</span>(bcg.iv, <span class="dt">comb.fixed=</span>F,<span class="dt">hetstat=</span>T,<span class="dt">prediction =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-9-3.png" width="\maxwidth" /></p>
+<p>Let’s play with <code>metabin</code> for a while. You can view all the options of <code>metabin</code> by typing <code>help(metabin)</code> in the console window.</p>
+</div>
+<div id="b.-two-variables" class="section level3 unnumbered">
+<h3>1b. Two variables</h3>
+<p>Two-variable commands are for generic (pre-calculated) effect size and standard error. For most observational studies, we prefer to use the adjusted effect size (e.g., odds ratio or hazards ratio) over the crude data, because confounding is often a concern in observational studies. Note that for relative measure (rate ratio, risk ratio, hazard ratio, or odds ratio) the effect sizes need to be in log transformed format and the standard error is that for log (effect size).</p>
+<p><strong>Two variables:</strong> <code>metagen(logRR, selogRR, studlab=trialnam,sm="RR",data=bcg)</code></p>
+<p>In the command window, type:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1">bcg<span class="op">$</span>logRR &lt;-<span class="st"> </span><span class="kw">log</span>( (bcg<span class="op">$</span>tcases<span class="op">/</span>bcg<span class="op">$</span>ttotal) <span class="op">/</span><span class="st"> </span>(bcg<span class="op">$</span>ccases<span class="op">/</span>bcg<span class="op">$</span>ctotal) )</a>
+<a class="sourceLine" id="cb8-2" title="2">bcg<span class="op">$</span>selogRR &lt;-<span class="st"> </span><span class="kw">sqrt</span>( <span class="dv">1</span><span class="op">/</span>bcg<span class="op">$</span>tcases <span class="op">+</span><span class="dv">1</span><span class="op">/</span>bcg<span class="op">$</span>ccases <span class="dv">-1</span><span class="op">/</span>bcg<span class="op">$</span>ttotal <span class="dv">-1</span><span class="op">/</span>bcg<span class="op">$</span>ctotal ) </a></code></pre></div>
+<p>(This generates the necessary input for the two-variable command)</p>
+<p>Then type: <code>bcg.iv.2 &lt;- metagen(logRR, selogRR, studlab=trialnam, sm="RR", data=bcg)</code></p>
+<p>You would expect to obtain the same results using the four-variable or two-variable options by the inverse variance method</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1">bcg.iv<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">metagen</span>(logRR, selogRR, <span class="dt">studlab=</span>trialnam, <span class="dt">sm=</span><span class="st">&quot;RR&quot;</span>, <span class="dt">data=</span>bcg)</a></code></pre></div>
+</div>
+<div id="c.-alternative-methods-for-fixed-effect-analysis" class="section level3 unnumbered">
+<h3>1c. Alternative methods for fixed-effect analysis</h3>
+<p>Use the BCG trial data and the four-variable (type 1) command:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1">bcg.iv &lt;-<span class="st"> </span><span class="kw">metabin</span>(tcases,ttotal,ccases,ctotal,<span class="dt">studlab=</span>trialnam,<span class="dt">method=</span><span class="st">&quot;I&quot;</span>,<span class="dt">sm=</span><span class="st">&quot;RR&quot;</span>,<span class="dt">data=</span>bcg)</a></code></pre></div>
+<p>What pooling method was used? inverse variance? Mantel-Haenszel? Peto?</p>
+<p>What is the summary RR and 95% CI, and what is your interpretation?</p>
+<p>Using the four-variable command, compare the results from two different methods, one using <code>method="I"</code> and one using <code>method="MH"</code> option. Are the summary RR the same? Why? Which one would you use in this example? Which option would be available if you only have the two-variable data?</p>
+</div>
+<div id="d.-random-effects-model" class="section level3 unnumbered">
+<h3>1d. Random-effects model</h3>
+<p>Now compare the results of <strong>fixed-effect model</strong> and <strong>random-effects model</strong>. How are the summary RRs different? Which one has a larger protective effect (smaller RR) and why? Look at the weights of the studies in the two models, what do you find? Which model would you use?</p>
+</div>
+<div id="e.-heterogeneity-assessment" class="section level3 unnumbered">
+<h3>1e. Heterogeneity assessment</h3>
+<p>Continue with the BCG dataset.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1">bcg.iv.random &lt;-<span class="st"> </span><span class="kw">metabin</span>(tcases,ttotal,ccases,ctotal,<span class="dt">studlab=</span>trialnam,<span class="dt">method=</span><span class="st">&quot;I&quot;</span>,<span class="dt">sm=</span><span class="st">&quot;RR&quot;</span>,<span class="dt">data=</span>bcg, <span class="dt">comb.fixed=</span>F)</a>
+<a class="sourceLine" id="cb11-2" title="2"><span class="kw">forest</span>(bcg.iv.random)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>Using <code>comb.fixed=F</code> to print results for the random-effects model only.
+What measurements of heterogeneity are available? What is your interpretation of each of the indicator?</p>
+<p>Another way to look at heterogeneity (and to put the between-study variance, Tau-squared, into context) is to look at the confidence interval of the approximate predictive distribution of a future trial (i.e., the predictive interval). Add the option <code>prediction=T</code> to your command:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1">bcg.iv.pred &lt;-<span class="st"> </span><span class="kw">metabin</span>(tcases,ttotal,ccases,ctotal,<span class="dt">studlab=</span>trialnam,<span class="dt">method=</span><span class="st">&quot;I&quot;</span>, <span class="dt">sm=</span><span class="st">&quot;RR&quot;</span>,<span class="dt">data=</span>bcg, <span class="dt">comb.fixed=</span>F, <span class="dt">prediction=</span>T)</a>
+<a class="sourceLine" id="cb12-2" title="2"><span class="kw">forest</span>(bcg.iv.pred)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>What is the estimated predictive interval and how does it compare to the confidence interval of summary RR? Interpretation of the two intervals?</p>
+</div>
+<div id="f.-exploring-the-source-of-heterogeneity" class="section level3 unnumbered">
+<h3>1f. Exploring the source of heterogeneity</h3>
+<ol style="list-style-type: decimal">
+<li>Now let’s conduct subgroup analyses to explore the potential sources of the huge observed heterogeneity</li>
+</ol>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1">bcg.sub1 &lt;-<span class="st"> </span><span class="kw">metagen</span>(logRR, selogRR, <span class="dt">studlab=</span>trialnam, <span class="dt">sm=</span><span class="st">&quot;RR&quot;</span>, <span class="dt">data=</span>bcg, <span class="dt">byvar=</span>alloc)</a>
+<a class="sourceLine" id="cb13-2" title="2"><span class="kw">forest</span>(bcg.sub1)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1">bcg.sub2 &lt;-<span class="st"> </span><span class="kw">metagen</span>(logRR, selogRR, <span class="dt">studlab=</span>trialnam, <span class="dt">sm=</span><span class="st">&quot;RR&quot;</span>, <span class="dt">data=</span>bcg, <span class="dt">byvar=</span>latitude)</a>
+<a class="sourceLine" id="cb14-2" title="2"><span class="kw">forest</span>(bcg.sub2)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-15-2.png" width="672" /></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1">bcg<span class="op">$</span>lat_bi &lt;-<span class="st"> </span><span class="kw">ifelse</span>(bcg<span class="op">$</span>latitude<span class="op">&gt;</span><span class="dv">30</span>,<span class="dv">1</span>,<span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb15-2" title="2">bcg.sub3 &lt;-<span class="st"> </span><span class="kw">metagen</span>(logRR, selogRR, <span class="dt">studlab=</span>trialnam, <span class="dt">sm=</span><span class="st">&quot;RR&quot;</span>, <span class="dt">data=</span>bcg, <span class="dt">byvar=</span>lat_bi) </a>
+<a class="sourceLine" id="cb15-3" title="3"><span class="kw">forest</span>(bcg.sub3)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-15-3.png" width="672" /></p>
+<p>How does the effect of BCG change in different subgroups (random vs. nonrandom allocation, high vs. low latitude)? Is the difference statistically significant? How does I-squared change within the subgroups?</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Meta-regression analysis</li>
+</ol>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">library</span>(metafor)</a>
+<a class="sourceLine" id="cb16-2" title="2">bcg.iv<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">metagen</span>(logRR, selogRR, <span class="dt">studlab=</span>trialnam, <span class="dt">sm=</span><span class="st">&quot;RR&quot;</span>, <span class="dt">data=</span>bcg) </a>
+<a class="sourceLine" id="cb16-3" title="3"><span class="kw">forest</span>(bcg.iv<span class="fl">.2</span>)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p>Use Hartung-Knapp method to adjust variance of the estimated coefficients</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1">bcg.reg &lt;-<span class="st"> </span><span class="kw">metareg</span>(bcg.iv<span class="fl">.2</span>,<span class="op">~</span>latitude, <span class="dt">method.tau=</span><span class="st">&quot;REML&quot;</span>, <span class="dt">hakn =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<p>Generate bubble plot</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">bubble</span>(bcg.reg)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1"><span class="kw">bubble</span>(bcg.reg, <span class="dt">col=</span><span class="st">&quot;navy&quot;</span>, <span class="dt">bg=</span><span class="kw">rgb</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dt">alpha =</span> <span class="fl">0.5</span>), <span class="dt">col.line=</span><span class="st">&quot;navy&quot;</span>,</a>
+<a class="sourceLine" id="cb19-2" title="2"><span class="dt">xlab=</span><span class="st">&quot;latitude&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;logRR&quot;</span>)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-18-2.png" width="672" /></p>
+</div>
+</div>
+<div id="example-2---rimonabant" class="section level2 unnumbered">
+<h2>Example 2 - Rimonabant</h2>
+<p><strong>Rimonabant example. (Read the paper by Christensen et al in Lancet 2007 for details)</strong></p>
+<p>Using command <code>metacont</code> in the <code>meta</code> package</p>
+<p>Read in the data</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1">rimonabant &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;C:/Users/User/Desktop/研究所/碩二上/助教. 統合分析/107_Lab_day1/rimonabant.csv&quot;</span>)</a></code></pre></div>
+<div id="a.-six-variables" class="section level3 unnumbered">
+<h3>2a. Six variables</h3>
+<p>The six-variable command is for the comparison of difference in means between treatment (exposed) and control (unexposed) group, and the order has to be: the number of events in the treatment group, the effect size in the treatment group, the standard deviation of effect size in the treatment group, the number of events in the control group, the effect size in the control group, the standard deviation of effect size in the control group.</p>
+<p>Now, in the command window type:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">library</span>(meta)</a>
+<a class="sourceLine" id="cb21-2" title="2">rimonabant.iv &lt;-<span class="st"> </span><span class="kw">metacont</span>(<span class="dt">n.e =</span> txn, <span class="dt">mean.e =</span> txef, <span class="dt">sd.e =</span> txsd, <span class="dt">n.c =</span> cnn, <span class="dt">mean.c =</span> cnef, <span class="dt">sd.c =</span> cnsd, <span class="dt">studlab =</span> study, <span class="dt">method.tau=</span><span class="st">&quot;DL&quot;</span>,<span class="dt">sm=</span><span class="st">&quot;MD&quot;</span>,<span class="dt">data =</span> rimonabant)</a></code></pre></div>
+<p>First use <code>library</code> command to load the add-on <code>meta</code> package, then use the <code>metacont</code> command to conduct a meta-analysis, and save the results in the object <code>rimonabant.iv</code>.</p>
+<p>You can specify the type of summary measure you want to use: <code>sm=( "MD", "SMD")</code></p>
+<table class="table" style="font-size: 14px; width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+Summary measures
+</th>
+<th style="text-align:left;">
+R code
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Mean difference
+</td>
+<td style="text-align:left;">
+sm=“MD”
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Standardised mean difference
+</td>
+<td style="text-align:left;">
+sm=“SMD”
+</td>
+</tr>
+</tbody>
+</table>
+<p>And the statistical methods for pooling: <code>method.tau=( "DL", "REML", or "ML")</code>.</p>
+<p>Then type <code>rimonabant.iv</code> to call the results of the analysis.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1">rimonabant.iv</a></code></pre></div>
+<pre><code>##                        MD             95%-CI %W(fixed) %W(random)
+## RIO-Europe        -4.8000 [-5.7211; -3.8789]      15.2       20.8
+## RIO-Lipids        -5.4000 [-6.2330; -4.5670]      18.5       22.8
+## RIO-North America -4.7000 [-5.2842; -4.1158]      37.7       29.3
+## RIO-Diabetes      -3.9000 [-4.5704; -3.2296]      28.6       27.0
+## 
+## Number of studies combined: k = 4
+## 
+##                           MD             95%-CI      z  p-value
+## Fixed effect model   -4.6160 [-4.9746; -4.2573] -25.23 &lt; 0.0001
+## Random effects model -4.6648 [-5.2678; -4.0618] -15.16 &lt; 0.0001
+## 
+## Quantifying heterogeneity:
+##  tau^2 = 0.2337 [0.0000; 5.1678]; tau = 0.4834 [0.0000; 2.2733];
+##  I^2 = 62.6% [0.0%; 87.4%]; H = 1.63 [1.00; 2.82]
+## 
+## Test of heterogeneity:
+##     Q d.f. p-value
+##  8.02    3  0.0457
+## 
+## Details on meta-analytical method:
+## - Inverse variance method
+## - DerSimonian-Laird estimator for tau^2
+## - Jackson method for confidence interval of tau^2 and tau</code></pre>
+<p>Now type in the following:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" title="1"><span class="kw">metacont</span>(<span class="dt">n.e =</span> txn, <span class="dt">mean.e =</span> txef, <span class="dt">sd.e =</span> txsd, <span class="dt">n.c =</span> cnn, <span class="dt">mean.c =</span> cnef, <span class="dt">sd.c =</span> cnsd, <span class="dt">studlab =</span> study, <span class="dt">method.tau=</span><span class="st">&quot;DL&quot;</span>, <span class="dt">sm=</span><span class="st">&quot;SMD&quot;</span>, <span class="dt">method.smd =</span> <span class="st">&quot;Cohen&quot;</span>,<span class="dt">data =</span> rimonabant)</a></code></pre></div>
+<pre><code>##                       SMD             95%-CI %W(fixed) %W(random)
+## RIO-Europe        -0.6916 [-0.8331; -0.5501]      21.8       24.5
+## RIO-Lipids        -0.9677 [-1.1256; -0.8097]      17.5       22.2
+## RIO-North America -0.7833 [-0.8840; -0.6827]      43.0       31.0
+## RIO-Diabetes      -0.8741 [-1.0306; -0.7175]      17.8       22.4
+## 
+## Number of studies combined: k = 4
+## 
+##                          SMD             95%-CI      z  p-value
+## Fixed effect model   -0.8117 [-0.8777; -0.7457] -24.11 &lt; 0.0001
+## Random effects model -0.8221 [-0.9298; -0.7144] -14.96 &lt; 0.0001
+## 
+## Quantifying heterogeneity:
+##  tau^2 = 0.0071 [0.0000; 0.1778]; tau = 0.0844 [0.0000; 0.4217];
+##  I^2 = 59.6% [0.0%; 86.5%]; H = 1.57 [1.00; 2.72]
+## 
+## Test of heterogeneity:
+##     Q d.f. p-value
+##  7.43    3  0.0594
+## 
+## Details on meta-analytical method:
+## - Inverse variance method
+## - DerSimonian-Laird estimator for tau^2
+## - Jackson method for confidence interval of tau^2 and tau
+## - Cohen&#39;s d (standardised mean difference)</code></pre>
+<p>The <code>method.smd = "Cohen"</code> option means that we are calculating the Cohen’s d (standardized mean difference) of each study.</p>
+<p>The different method is used to estimate the standardised mean difference: <code>method.smd=( "Hedges", "Cohen", or "Glass")</code></p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" title="1">knitr<span class="op">::</span><span class="kw">kable</span>(</a>
+<a class="sourceLine" id="cb26-2" title="2">  tibble<span class="op">::</span><span class="kw">tibble</span>(<span class="st">`</span><span class="dt">Method</span><span class="st">`</span>=<span class="kw">c</span>(<span class="st">&quot; Hedges’g (default) &quot;</span>,<span class="st">&quot;Cohen’s d &quot;</span>, <span class="st">&quot;Glass’ delta&quot;</span>), <span class="st">`</span><span class="dt">R code</span><span class="st">`</span>=<span class="kw">c</span>(<span class="st">&#39;method.smd =&quot;Hedges&quot;&#39;</span>, <span class="st">&#39;method.smd =&quot;Cohen&quot;&#39;</span>, <span class="st">&#39;method.smd =&quot;Glass&quot;&#39;</span>)))<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb26-3" title="3"><span class="st">  </span>kableExtra<span class="op">::</span><span class="kw">kable_styling</span>(<span class="dt">full_width =</span> F, <span class="dt">position =</span> <span class="st">&quot;left&quot;</span>, <span class="dt">font_size =</span> <span class="dv">14</span>)</a></code></pre></div>
+<table class="table" style="font-size: 14px; width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+Method
+</th>
+<th style="text-align:left;">
+R code
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Hedges’g (default)
+</td>
+<td style="text-align:left;">
+method.smd =“Hedges”
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cohen’s d
+</td>
+<td style="text-align:left;">
+method.smd =“Cohen”
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Glass’ delta
+</td>
+<td style="text-align:left;">
+method.smd =“Glass”
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="b.-two-or-three-variables" class="section level3 unnumbered">
+<h3>2b. Two or three variables</h3>
+<p>The two- or three-variable commands are just like the ones used in the binary data, and are for generic (pre-calculated) effect size and standard error (or lower and upper limits). Note that for difference in means there is no need to log transform the data.
+<strong>Two variables:</strong> <code>metagen(logRR, selogRR, studlab=trialnam,sm="RR",data=bcg)</code></p>
+<p>In the command window, type:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1">rimonabant<span class="op">$</span>TE &lt;-<span class="st"> </span>rimonabant<span class="op">$</span>txef <span class="op">-</span><span class="st"> </span>rimonabant<span class="op">$</span>cnef</a>
+<a class="sourceLine" id="cb27-2" title="2">rimonabant<span class="op">$</span>seTE &lt;-<span class="st"> </span><span class="kw">sqrt</span>(rimonabant<span class="op">$</span>txsd<span class="op">^</span><span class="dv">2</span><span class="op">/</span>rimonabant<span class="op">$</span>txn <span class="op">+</span><span class="st"> </span>rimonabant<span class="op">$</span>cnsd<span class="op">^</span><span class="dv">2</span><span class="op">/</span>rimonabant<span class="op">$</span>cnn)</a></code></pre></div>
+<p>(This generates the necessary input for the two-variable command)</p>
+<p>Then type:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" title="1">rimonabant.iv<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">metagen</span>(TE, seTE, <span class="dt">studlab =</span> study, <span class="dt">sm=</span><span class="st">&quot;MD&quot;</span>, <span class="dt">data =</span> rimonabant)</a></code></pre></div>
+</div>
+</div>
+<div id="example-3---passive-smoking" class="section level2 unnumbered">
+<h2>Example 3 - Passive smoking</h2>
+<p><strong>Association between passive smoking and lung cancer in women (Hackshaw et al, BMJ 1997)</strong></p>
+<p>Read in the data:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" title="1">ps &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;C:/Users/User/Desktop/研究所/碩二上/助教. 統合分析/107_Lab_day1/passivesmoking.csv&quot;</span>)</a></code></pre></div>
+<p>Then type:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" title="1">ps.iv &lt;-<span class="st"> </span><span class="kw">metagen</span>(logOR, selogOR, <span class="dt">sm=</span><span class="st">&quot;OR&quot;</span>, <span class="dt">data=</span>ps)</a></code></pre></div>
+<div id="a.-funnel-plot-using-the-original-odds-ratio" class="section level3 unnumbered">
+<h3>3a. Funnel plot using the original odds ratio</h3>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" title="1"><span class="kw">funnel</span>(ps.iv, <span class="dt">comb.random =</span> F)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+</div>
+<div id="b.-contour-enhanced-funnel-plot" class="section level3 unnumbered">
+<h3>3b. Contour-enhanced funnel plot</h3>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" title="1"><span class="kw">funnel</span>(ps.iv, <span class="dt">comb.random =</span> F, <span class="dt">contour.levels =</span> <span class="kw">c</span>(<span class="fl">0.9</span>,<span class="fl">0.95</span>,<span class="fl">0.99</span>), <span class="dt">col.contour =</span> <span class="kw">c</span>(<span class="st">&quot;gray50&quot;</span>,<span class="st">&quot;gray70&quot;</span>,<span class="st">&quot;gray90&quot;</span>), <span class="dt">ref =</span> <span class="kw">exp</span>(ps.iv<span class="op">$</span>TE.fixed))</a>
+<a class="sourceLine" id="cb32-2" title="2"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;p &lt; 0.01&quot;</span>, <span class="st">&quot;0.01 &lt; p &lt; 0.05&quot;</span>, <span class="st">&quot;0.05 &lt; p &lt; 0.10&quot;</span>, <span class="st">&quot;p &gt; 0.10&quot;</span>), <span class="dt">fill=</span><span class="kw">c</span>(<span class="st">&quot;gray50&quot;</span>,<span class="st">&quot;gray70&quot;</span>,<span class="st">&quot;gray90&quot;</span>, <span class="st">&#39;white&#39;</span>), <span class="dt">bg =</span> <span class="st">&#39;white&#39;</span>)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+</div>
+<div id="c.-statistical-test-for-funnel-plot-asymmetry" class="section level3 unnumbered">
+<h3>3c. Statistical test for funnel plot asymmetry</h3>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" title="1">ps.bias &lt;-<span class="st"> </span><span class="kw">metabias</span>(ps.iv,<span class="dt">method.bias=</span><span class="st">&quot;linreg&quot;</span>,<span class="dt">plotit=</span>T) <span class="co"># T for TRUE </span></a>
+<a class="sourceLine" id="cb33-2" title="2"><span class="kw">abline</span>(<span class="dt">h=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>), <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;gray&quot;</span>,<span class="st">&quot;gray&quot;</span>))</a>
+<a class="sourceLine" id="cb33-3" title="3"><span class="co"># segments(0,ps.bias$estimate[1]- 1.96*ps.bias$estimate[2],0,ps.bias$estimate[1]+1.96*ps.bias$estimate[2]) </span></a>
+<a class="sourceLine" id="cb33-4" title="4"><span class="kw">arrows</span>(<span class="dv">0</span>,ps.bias<span class="op">$</span>estimate[<span class="dv">1</span>],<span class="dv">0</span>,ps.bias<span class="op">$</span>estimate[<span class="dv">1</span>]<span class="op">-</span><span class="fl">1.96</span><span class="op">*</span>ps.bias<span class="op">$</span>estimate[<span class="dv">2</span>]) </a>
+<a class="sourceLine" id="cb33-5" title="5"><span class="kw">arrows</span>(<span class="dv">0</span>,ps.bias<span class="op">$</span>estimate[<span class="dv">1</span>],<span class="dv">0</span>,ps.bias<span class="op">$</span>estimate[<span class="dv">1</span>]<span class="op">+</span><span class="fl">1.96</span><span class="op">*</span>ps.bias<span class="op">$</span>estimate[<span class="dv">2</span>])</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+</div>
+<div id="d.-using-the-trim-and-fill-method" class="section level3 unnumbered">
+<h3>3d. Using the trim and fill method</h3>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" title="1">ps.trimfill &lt;-<span class="st"> </span><span class="kw">trimfill</span>(ps<span class="op">$</span>logOR, ps<span class="op">$</span>selogOR, <span class="dt">sm=</span><span class="st">&quot;OR&quot;</span>, <span class="dt">backtransf =</span> T)</a></code></pre></div>
+<p>Compare the pooled effect size before and after trim and fill</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" title="1">ps.trimfill</a></code></pre></div>
+<pre><code>##                OR           95%-CI %W(random)
+## 1          0.7500 [0.4313; 1.3041]        2.3
+## 2          2.0700 [0.8131; 5.2699]        0.9
+## 3          2.1300 [1.1873; 3.8212]        2.1
+## 4          0.8000 [0.3384; 1.8911]        1.1
+## 5          0.7900 [0.2524; 2.4730]        0.7
+## 6          2.0100 [1.0880; 3.7132]        1.9
+## 7          1.2300 [0.8095; 1.8689]        3.3
+## 8          1.2000 [0.4671; 3.0828]        0.9
+## 9          1.5200 [0.8742; 2.6428]        2.3
+## 10         1.0300 [0.4130; 2.5687]        1.0
+## 11         1.5500 [0.8999; 2.6697]        2.3
+## 12         1.0300 [0.6099; 1.7396]        2.4
+## 13         2.3400 [0.8106; 6.7549]        0.7
+## 14         1.6500 [1.1593; 2.3485]        4.1
+## 15         1.1900 [0.8193; 1.7285]        3.8
+## 16         1.5200 [0.3888; 5.9419]        0.5
+## 17         2.1600 [1.0838; 4.3049]        1.6
+## 18         1.0800 [0.6404; 1.8212]        2.5
+## 19         2.5500 [0.7403; 8.7834]        0.6
+## 20         1.6200 [0.9009; 2.9130]        2.1
+## 21         1.0600 [0.7396; 1.5192]        4.0
+## 22         0.7900 [0.6159; 1.0133]        5.7
+## 23         0.7400 [0.3220; 1.7006]        1.2
+## 24         2.2700 [0.7528; 6.8451]        0.7
+## 25         0.9700 [0.7788; 1.2081]        6.2
+## 26         1.6000 [0.8262; 3.0983]        1.7
+## 27         1.1900 [0.6624; 2.1378]        2.1
+## 28         1.6600 [0.7295; 3.7773]        1.2
+## 29         1.2600 [1.0354; 1.5332]        6.6
+## 30         1.1000 [0.6187; 1.9558]        2.1
+## 31         1.6600 [1.1224; 2.4552]        3.6
+## 32         1.1600 [0.7981; 1.6860]        3.8
+## 33         1.1100 [0.6698; 1.8395]        2.6
+## 34         1.1800 [0.9021; 1.5435]        5.3
+## 35         1.4500 [1.0154; 2.0706]        4.0
+## 36         2.0200 [0.4784; 8.5301]        0.4
+## 37         1.2000 [0.8950; 1.6090]        4.9
+## Filled: 36 0.6764 [0.1602; 2.8565]        0.4
+## Filled: 2  0.6601 [0.2593; 1.6805]        0.9
+## Filled: 3  0.6415 [0.3576; 1.1508]        2.1
+## Filled: 17 0.6326 [0.3174; 1.2608]        1.6
+## Filled: 24 0.6019 [0.1996; 1.8151]        0.7
+## Filled: 13 0.5839 [0.2023; 1.6856]        0.7
+## Filled: 19 0.5358 [0.1556; 1.8457]        0.6
+## 
+## Number of studies combined: k = 44 (with 7 added studies)
+## 
+##                          OR           95%-CI    z p-value
+## Random effects model 1.1886 [1.0802; 1.3079] 3.54  0.0004
+## 
+## Quantifying heterogeneity:
+##  tau^2 = 0.0260 [0.0000; 0.1033]; tau = 0.1612 [0.0000; 0.3213];
+##  I^2 = 30.4% [0.0%; 52.1%]; H = 1.20 [1.00; 1.45]
+## 
+## Test of heterogeneity:
+##      Q d.f. p-value
+##  61.79   43  0.0315
+## 
+## Details on meta-analytical method:
+## - Inverse variance method
+## - DerSimonian-Laird estimator for tau^2
+## - Jackson method for confidence interval of tau^2 and tau
+## - Trim-and-fill method to adjust for funnel plot asymmetry</code></pre>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="strart-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="diagnostic-test.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-binary_continuous.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
