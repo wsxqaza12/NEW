@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 1 Strart R | [NTU 108] Meta analysis</title>
-  <meta name="description" content="Chapter 1 Strart R | [NTU 108] Meta analysis" />
+  <title>Exercise 3 - CBCL | [NTU 108] Meta analysis</title>
+  <meta name="description" content="Exercise 3 - CBCL | [NTU 108] Meta analysis" />
   <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 1 Strart R | [NTU 108] Meta analysis" />
+  <meta property="og:title" content="Exercise 3 - CBCL | [NTU 108] Meta analysis" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="wsxqaza12/NTU-108-Meta-Analysis" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 1 Strart R | [NTU 108] Meta analysis" />
+  <meta name="twitter:title" content="Exercise 3 - CBCL | [NTU 108] Meta analysis" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="introduction.html"/>
+<link rel="prev" href="exercise-2-tseng.html"/>
+<link rel="next" href="prevalence-and-survival-data.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,7 +50,6 @@
 
 
 
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link rel="icon" href="images/LOGO.ico" type="image/x-icon" / >
 <link rel="shortcut icon" href="images/LOGO.ico" type="image/x-icon" / >
 
@@ -211,18 +210,210 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="strart-r" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Strart R</h1>
-<p>In the first lab of the course of meta-analysis, our goal is to introduce you to R and help you can deal with your datasets with R. You will learn the fundamental concept of R from setting your working directory to importing and saving your data, and the most important thing: install the useful R packages to kick off the work on meta-analysis!</p>
-<p><img src="images/PRE.png" width="70%" style="display: block; margin: auto;" /></p> 
+<div id="exercise-3---cbcl" class="section level2 unnumbered">
+<h2>Exercise 3 - CBCL</h2>
+<p>As with Exercise 1 and 2, we need to read in the csv file first. Table <a href="exercise-3-cbcl.html#tab:CBCL-data">3.3</a> is the first 5 rows of CBCL data.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="co"># Read data</span></a>
+<a class="sourceLine" id="cb16-2" data-line-number="2">CBCL &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;~/Desktop/meta/Diagnostic Test/CBCL.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb16-3" data-line-number="3"><span class="kw">print</span>(CBCL)</a></code></pre></div>
+<table>
+<caption><span id="tab:CBCL-data">Table 3.3: </span>A table of the first 5 rows of CBCL data.</caption>
+<thead>
+<tr class="header">
+<th align="left">test</th>
+<th align="left">study_id</th>
+<th align="right">TP</th>
+<th align="right">FP</th>
+<th align="right">FN</th>
+<th align="right">TN</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">CBCL</td>
+<td align="left">Derks et al. 2006-M</td>
+<td align="right">20</td>
+<td align="right">14</td>
+<td align="right">7</td>
+<td align="right">151</td>
+</tr>
+<tr class="even">
+<td align="left">CBCL</td>
+<td align="left">Derks et al. 2006-F</td>
+<td align="right">20</td>
+<td align="right">36</td>
+<td align="right">5</td>
+<td align="right">155</td>
+</tr>
+<tr class="odd">
+<td align="left">CBCL</td>
+<td align="left">Edwards et al. 2015</td>
+<td align="right">38</td>
+<td align="right">17</td>
+<td align="right">11</td>
+<td align="right">29</td>
+</tr>
+<tr class="even">
+<td align="left">CBCL</td>
+<td align="left">Eiraldi et al. 2000</td>
+<td align="right">88</td>
+<td align="right">6</td>
+<td align="right">85</td>
+<td align="right">30</td>
+</tr>
+<tr class="odd">
+<td align="left">CBCL</td>
+<td align="left">Elkins et al. 2014</td>
+<td align="right">17</td>
+<td align="right">2</td>
+<td align="right">6</td>
+<td align="right">21</td>
+</tr>
+</tbody>
+</table>
+<div id="a.-univariate-analysis-2" class="section level3 unnumbered">
+<h3>3a. Univariate Analysis</h3>
+<p>Use the <code>madad</code> command to conduct a meta analysis by using univariate model, and save the results in the object “madad.CBCL”</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="co">## Univariate Analysis ##</span></a>
+<a class="sourceLine" id="cb17-2" data-line-number="2">madad.CBCL &lt;-<span class="st"> </span><span class="kw">madad</span>(CBCL)</a>
+<a class="sourceLine" id="cb17-3" data-line-number="3"><span class="kw">print</span>(madad.CBCL)</a></code></pre></div>
+<pre><code>## Descriptive summary of CBCL with 16 primary studies.
+## Confidence level for all calculations set to 95 %
+## Using a continuity correction of 0.5 if applicable 
+## 
+## Diagnostic accuracies 
+##        sens  2.5% 97.5%  spec  2.5% 97.5%
+##  [1,] 0.741 0.553 0.868 0.915 0.863 0.949
+##  [2,] 0.800 0.609 0.911 0.812 0.750 0.861
+##  [3,] 0.776 0.641 0.870 0.630 0.486 0.755
+##  [4,] 0.509 0.435 0.582 0.833 0.681 0.921
+##  [5,] 0.739 0.535 0.875 0.913 0.732 0.976
+##  [6,] 0.941 0.730 0.990 0.500 0.348 0.652
+##  [7,] 0.585 0.434 0.722 0.876 0.832 0.911
+##  [8,] 0.833 0.726 0.904 0.880 0.809 0.927
+##  [9,] 0.727 0.558 0.849 0.385 0.177 0.645
+## [10,] 0.749 0.708 0.787 0.701 0.648 0.750
+## [11,] 0.714 0.605 0.803 0.811 0.743 0.865
+## [12,] 0.968 0.938 0.984 0.493 0.380 0.607
+## [13,] 0.851 0.786 0.898 0.533 0.449 0.615
+## [14,] 0.639 0.514 0.748 0.542 0.351 0.721
+## [15,] 0.639 0.545 0.723 0.487 0.378 0.597
+## [16,] 0.842 0.624 0.945 0.843 0.720 0.918
+## 
+## Test for equality of sensitivities: 
+## X-squared = 152, df = 15, p-value = &lt;2e-16
+## Test for equality of specificities: 
+## X-squared = 194, df = 15, p-value = &lt;2e-16
+## 
+## 
+## Diagnostic OR and likelihood ratios 
+##         DOR   2.5%  97.5% posLR  2.5% 97.5% negLR  2.5% 97.5%
+##  [1,] 30.82 11.111  85.47  8.73 5.044 15.11 0.283 0.149 0.537
+##  [2,] 17.22  6.057  48.97  4.24 2.980  6.04 0.246 0.112 0.541
+##  [3,]  5.89  2.398  14.48  2.10 1.398  3.15 0.356 0.202 0.627
+##  [4,]  5.18  2.051  13.06  3.05 1.449  6.43 0.590 0.478 0.728
+##  [5,] 29.75  5.310 166.69  8.50 2.212 32.67 0.286 0.142 0.575
+##  [6,] 16.00  1.924 133.03  1.88 1.341  2.64 0.118 0.017 0.809
+##  [7,] 10.01  4.871  20.57  4.74 3.142  7.14 0.473 0.328 0.683
+##  [8,] 36.79 15.647  86.48  6.96 4.211 11.52 0.189 0.110 0.326
+##  [9,]  1.67  0.430   6.46  1.18 0.733  1.91 0.709 0.293 1.718
+## [10,]  7.02  5.083   9.70  2.51 2.097  3.00 0.357 0.300 0.426
+## [11,] 10.75  5.701  20.27  3.79 2.663  5.38 0.352 0.245 0.505
+## [12,] 29.17 12.539  67.84  1.91 1.516  2.40 0.065 0.032 0.135
+## [13,]  6.51  3.728  11.37  1.82 1.504  2.21 0.280 0.186 0.421
+## [14,]  2.10  0.804   5.46  1.40 0.868  2.24 0.666 0.405 1.095
+## [15,]  1.68  0.924   3.05  1.25 0.959  1.62 0.742 0.527 1.043
+## [16,] 28.67  6.753 121.69  5.37 2.760 10.44 0.187 0.066 0.533
+## 
+## Correlation of sensitivities and false positive rates: 
+##    rho  2.5 % 97.5 % 
+##  0.265 -0.266  0.672</code></pre>
 </div>
+<div id="b.-forest-plot-2" class="section level3 unnumbered">
+<h3>3b. Forest plot</h3>
+<p>Then use the <code>forest</code> command to draw the forest plot. The <code>split.screen</code> function is used to split a plotting window into different rectangular sections called “screens”. Figure <a href="exercise-3-cbcl.html#fig:CBCL-UM-FP">3.5</a> is the forest plot of CBCL data.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="kw">split.screen</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb19-2" data-line-number="2"><span class="kw">screen</span>(<span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb19-3" data-line-number="3"><span class="kw">forest</span>(madad.CBCL, <span class="dt">type =</span> <span class="st">&quot;sens&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Sensitivity&quot;</span>, <span class="dt">cex =</span> <span class="fl">.8</span>, <span class="dt">snames =</span> CBCL<span class="op">$</span>study_id)</a>
+<a class="sourceLine" id="cb19-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb19-5" data-line-number="5"><span class="kw">screen</span>(<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb19-6" data-line-number="6"><span class="kw">forest</span>(madad.CBCL, <span class="dt">type =</span> <span class="st">&quot;spec&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Specificity&quot;</span>, <span class="dt">cex =</span> <span class="fl">.8</span>, <span class="dt">snames =</span> CBCL<span class="op">$</span>study_id)</a>
+<a class="sourceLine" id="cb19-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb19-8" data-line-number="8"><span class="kw">close.screen</span>(<span class="dt">all.screens =</span> T)</a></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:CBCL-UM-FP"></span>
+<img src="images/CBCL-UM-FP.png" alt="The forest plot of CBCL data." width="500" />
+<p class="caption">
+Figure 3.5: The forest plot of CBCL data.
+</p>
+</div>
+</div>
+<div id="c.-bivariate-analysis-2" class="section level3 unnumbered">
+<h3>3c. Bivariate Analysis</h3>
+<p>Secondly, use the <code>reitsma</code> command to conduct a meta analysis by using bivariate model, and save the results in the object “bi.CBCL”</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="co">## Bivariate Analysis ##</span></a>
+<a class="sourceLine" id="cb20-2" data-line-number="2">bi.CBCL &lt;-<span class="st"> </span><span class="kw">reitsma</span>(CBCL)</a>
+<a class="sourceLine" id="cb20-3" data-line-number="3"><span class="kw">summary</span>(bi.CBCL)</a></code></pre></div>
+<pre><code>## Call:  reitsma.default(data = CBCL)
+## 
+## Bivariate diagnostic random-effects meta-analysis
+## Estimation method: REML
+## 
+## Fixed-effects coefficients
+##                   Estimate Std. Error      z Pr(&gt;|z|) 95%ci.lb 95%ci.ub
+## tsens.(Intercept)    1.181      0.208  5.681    0.000    0.774    1.589
+## tfpr.(Intercept)    -0.996      0.230 -4.335    0.000   -1.447   -0.546
+## sensitivity          0.765          -      -        -    0.684    0.830
+## false pos. rate      0.270          -      -        -    0.190    0.367
+##                      
+## tsens.(Intercept) ***
+## tfpr.(Intercept)  ***
+## sensitivity          
+## false pos. rate      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1 
+## 
+## Variance components: between-studies Std. Dev and correlation matrix
+##       Std. Dev tsens  tfpr
+## tsens    0.744 1.000     .
+## tfpr     0.858 0.372 1.000
+## 
+##  logLik     AIC     BIC 
+##  17.589 -25.178 -17.849 
+## 
+## AUC:  0.812
+## Partial AUC (restricted to observed FPRs and normalized):  0.78
+## 
+## HSROC parameters 
+##       Theta      Lambda        beta sigma2theta sigma2alpha 
+##       0.171       2.197       0.144       0.438       0.802</code></pre>
+</div>
+<div id="d.-sroc-2" class="section level3 unnumbered">
+<h3>3d. SROC</h3>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="co">## SROC ##</span></a>
+<a class="sourceLine" id="cb22-2" data-line-number="2"><span class="kw">plot</span>(bi.CBCL, <span class="dt">sroclwd =</span> <span class="dv">2</span>, <span class="dt">main =</span> <span class="st">&quot;SROC curve (bivariate model) for CBCL data&quot;</span>, <span class="dt">pch =</span> <span class="dv">16</span>)</a>
+<a class="sourceLine" id="cb22-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb22-4" data-line-number="4"><span class="kw">points</span>(<span class="kw">fpr</span>(nishimura), <span class="kw">sens</span>(nishimura), <span class="dt">pch =</span> <span class="dv">1</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</a>
+<a class="sourceLine" id="cb22-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb22-6" data-line-number="6"><span class="kw">legend</span>(<span class="st">&quot;bottomright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;summary estimate&quot;</span>), <span class="dt">pch =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">16</span>), <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;black&quot;</span>))</a>
+<a class="sourceLine" id="cb22-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb22-8" data-line-number="8"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;SROC&quot;</span>, <span class="st">&quot;conf. region&quot;</span>), <span class="dt">lwd =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>))</a></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:CBCL-SROC"></span>
+<img src="bookdown-demo_files/figure-html/CBCL-SROC-1.png" alt="The SROC of CBCL data." width="672" />
+<p class="caption">
+Figure 3.6: The SROC of CBCL data.
+</p>
+</div>
+
+</div>
+</div>
+<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="introduction.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="exercise-2-tseng.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="prevalence-and-survival-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -253,7 +444,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-Intro.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-Diagnostic_Test.Rmd",
 "text": "Edit"
 },
 "history": {
