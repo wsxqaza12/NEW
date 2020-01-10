@@ -212,13 +212,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="a.-funnel-plot-using-the-original-odds-ratio" class="section level3 unnumbered">
 <h3>3a. Funnel plot using the original odds ratio</h3>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="kw">funnel</span>(ps.iv, <span class="dt">comb.random =</span> F)</a></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
 </div>
 <div id="b.-contour-enhanced-funnel-plot" class="section level3 unnumbered">
 <h3>3b. Contour-enhanced funnel plot</h3>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="kw">funnel</span>(ps.iv, <span class="dt">comb.random =</span> F, <span class="dt">contour.levels =</span> <span class="kw">c</span>(<span class="fl">0.9</span>,<span class="fl">0.95</span>,<span class="fl">0.99</span>), <span class="dt">col.contour =</span> <span class="kw">c</span>(<span class="st">&quot;gray50&quot;</span>,<span class="st">&quot;gray70&quot;</span>,<span class="st">&quot;gray90&quot;</span>), <span class="dt">ref =</span> <span class="kw">exp</span>(ps.iv<span class="op">$</span>TE.fixed))</a>
 <a class="sourceLine" id="cb32-2" data-line-number="2"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;p &lt; 0.01&quot;</span>, <span class="st">&quot;0.01 &lt; p &lt; 0.05&quot;</span>, <span class="st">&quot;0.05 &lt; p &lt; 0.10&quot;</span>, <span class="st">&quot;p &gt; 0.10&quot;</span>), <span class="dt">fill=</span><span class="kw">c</span>(<span class="st">&quot;gray50&quot;</span>,<span class="st">&quot;gray70&quot;</span>,<span class="st">&quot;gray90&quot;</span>, <span class="st">&#39;white&#39;</span>), <span class="dt">bg =</span> <span class="st">&#39;white&#39;</span>)</a></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
 </div>
 <div id="c.-statistical-test-for-funnel-plot-asymmetry" class="section level3 unnumbered">
 <h3>3c. Statistical test for funnel plot asymmetry</h3>
@@ -227,7 +227,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb33-3" data-line-number="3"><span class="co"># segments(0,ps.bias$estimate[1]- 1.96*ps.bias$estimate[2],0,ps.bias$estimate[1]+1.96*ps.bias$estimate[2]) </span></a>
 <a class="sourceLine" id="cb33-4" data-line-number="4"><span class="kw">arrows</span>(<span class="dv">0</span>,ps.bias<span class="op">$</span>estimate[<span class="dv">1</span>],<span class="dv">0</span>,ps.bias<span class="op">$</span>estimate[<span class="dv">1</span>]<span class="op">-</span><span class="fl">1.96</span><span class="op">*</span>ps.bias<span class="op">$</span>estimate[<span class="dv">2</span>]) </a>
 <a class="sourceLine" id="cb33-5" data-line-number="5"><span class="kw">arrows</span>(<span class="dv">0</span>,ps.bias<span class="op">$</span>estimate[<span class="dv">1</span>],<span class="dv">0</span>,ps.bias<span class="op">$</span>estimate[<span class="dv">1</span>]<span class="op">+</span><span class="fl">1.96</span><span class="op">*</span>ps.bias<span class="op">$</span>estimate[<span class="dv">2</span>])</a></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
 </div>
 <div id="d.-using-the-trim-and-fill-method" class="section level3 unnumbered">
 <h3>3d. Using the trim and fill method</h3>

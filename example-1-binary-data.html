@@ -209,7 +209,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Read in the data</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">bcg &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;~/Desktop/meta/Lab_day1/bcg.csv&quot;</span>)</a></code></pre></div>
 <table>
-<caption><span id="tab:unnamed-chunk-3">Table 1.1: </span>A table of the first 5 rows of bcg data.</caption>
+<caption><span id="tab:unnamed-chunk-4">Table 2.1: </span>A table of the first 5 rows of bcg data.</caption>
 <thead>
 <tr class="header">
 <th align="right">trial</th>
@@ -433,11 +433,11 @@ sm=“RD”
 ## - DerSimonian-Laird estimator for tau^2</code></pre>
 <p>To draw the forest plot, type:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">forest</span>(bcg.iv)</a></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-9-1.png" width="\maxwidth" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-10-1.png" width="\maxwidth" /></p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">forest</span>(bcg.iv, <span class="dt">comb.random=</span>F, <span class="dt">hetstat=</span><span class="ot">FALSE</span>)</a></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-9-2.png" width="\maxwidth" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-10-2.png" width="\maxwidth" /></p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">forest</span>(bcg.iv, <span class="dt">comb.fixed=</span>F,<span class="dt">hetstat=</span>T,<span class="dt">prediction =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-9-3.png" width="\maxwidth" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-10-3.png" width="\maxwidth" /></p>
 <p>Let’s play with <code>metabin</code> for a while. You can view all the options of <code>metabin</code> by typing <code>help(metabin)</code> in the console window.</p>
 </div>
 <div id="b.-two-variables" class="section level3 unnumbered">
@@ -469,13 +469,13 @@ sm=“RD”
 <p>Continue with the BCG dataset.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">bcg.iv.random &lt;-<span class="st"> </span><span class="kw">metabin</span>(tcases,ttotal,ccases,ctotal,<span class="dt">studlab=</span>trialnam,<span class="dt">method=</span><span class="st">&quot;I&quot;</span>,<span class="dt">sm=</span><span class="st">&quot;RR&quot;</span>,<span class="dt">data=</span>bcg, <span class="dt">comb.fixed=</span>F)</a>
 <a class="sourceLine" id="cb11-2" data-line-number="2"><span class="kw">forest</span>(bcg.iv.random)</a></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <p>Using <code>comb.fixed=F</code> to print results for the random-effects model only.
 What measurements of heterogeneity are available? What is your interpretation of each of the indicator?</p>
 <p>Another way to look at heterogeneity (and to put the between-study variance, Tau-squared, into context) is to look at the confidence interval of the approximate predictive distribution of a future trial (i.e., the predictive interval). Add the option <code>prediction=T</code> to your command:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">bcg.iv.pred &lt;-<span class="st"> </span><span class="kw">metabin</span>(tcases,ttotal,ccases,ctotal,<span class="dt">studlab=</span>trialnam,<span class="dt">method=</span><span class="st">&quot;I&quot;</span>, <span class="dt">sm=</span><span class="st">&quot;RR&quot;</span>,<span class="dt">data=</span>bcg, <span class="dt">comb.fixed=</span>F, <span class="dt">prediction=</span>T)</a>
 <a class="sourceLine" id="cb12-2" data-line-number="2"><span class="kw">forest</span>(bcg.iv.pred)</a></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <p>What is the estimated predictive interval and how does it compare to the confidence interval of summary RR? Interpretation of the two intervals?</p>
 </div>
 <div id="f.-exploring-the-source-of-heterogeneity" class="section level3 unnumbered">
@@ -485,14 +485,14 @@ What measurements of heterogeneity are available? What is your interpretation of
 </ol>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">bcg.sub1 &lt;-<span class="st"> </span><span class="kw">metagen</span>(logRR, selogRR, <span class="dt">studlab=</span>trialnam, <span class="dt">sm=</span><span class="st">&quot;RR&quot;</span>, <span class="dt">data=</span>bcg, <span class="dt">byvar=</span>alloc)</a>
 <a class="sourceLine" id="cb13-2" data-line-number="2"><span class="kw">forest</span>(bcg.sub1)</a></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">bcg.sub2 &lt;-<span class="st"> </span><span class="kw">metagen</span>(logRR, selogRR, <span class="dt">studlab=</span>trialnam, <span class="dt">sm=</span><span class="st">&quot;RR&quot;</span>, <span class="dt">data=</span>bcg, <span class="dt">byvar=</span>latitude)</a>
 <a class="sourceLine" id="cb14-2" data-line-number="2"><span class="kw">forest</span>(bcg.sub2)</a></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-15-2.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-16-2.png" width="672" /></p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">bcg<span class="op">$</span>lat_bi &lt;-<span class="st"> </span><span class="kw">ifelse</span>(bcg<span class="op">$</span>latitude<span class="op">&gt;</span><span class="dv">30</span>,<span class="dv">1</span>,<span class="dv">0</span>)</a>
 <a class="sourceLine" id="cb15-2" data-line-number="2">bcg.sub3 &lt;-<span class="st"> </span><span class="kw">metagen</span>(logRR, selogRR, <span class="dt">studlab=</span>trialnam, <span class="dt">sm=</span><span class="st">&quot;RR&quot;</span>, <span class="dt">data=</span>bcg, <span class="dt">byvar=</span>lat_bi) </a>
 <a class="sourceLine" id="cb15-3" data-line-number="3"><span class="kw">forest</span>(bcg.sub3)</a></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-15-3.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-16-3.png" width="672" /></p>
 <p>How does the effect of BCG change in different subgroups (random vs. nonrandom allocation, high vs. low latitude)? Is the difference statistically significant? How does I-squared change within the subgroups?</p>
 <ol start="2" style="list-style-type: decimal">
 <li>Meta-regression analysis</li>
@@ -500,15 +500,15 @@ What measurements of heterogeneity are available? What is your interpretation of
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw">library</span>(metafor)</a>
 <a class="sourceLine" id="cb16-2" data-line-number="2">bcg.iv<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">metagen</span>(logRR, selogRR, <span class="dt">studlab=</span>trialnam, <span class="dt">sm=</span><span class="st">&quot;RR&quot;</span>, <span class="dt">data=</span>bcg) </a>
 <a class="sourceLine" id="cb16-3" data-line-number="3"><span class="kw">forest</span>(bcg.iv<span class="fl">.2</span>)</a></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 <p>Use Hartung-Knapp method to adjust variance of the estimated coefficients</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">bcg.reg &lt;-<span class="st"> </span><span class="kw">metareg</span>(bcg.iv<span class="fl">.2</span>,<span class="op">~</span>latitude, <span class="dt">method.tau=</span><span class="st">&quot;REML&quot;</span>, <span class="dt">hakn =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <p>Generate bubble plot</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">bubble</span>(bcg.reg)</a></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="kw">bubble</span>(bcg.reg, <span class="dt">col=</span><span class="st">&quot;navy&quot;</span>, <span class="dt">bg=</span><span class="kw">rgb</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dt">alpha =</span> <span class="fl">0.5</span>), <span class="dt">col.line=</span><span class="st">&quot;navy&quot;</span>,</a>
 <a class="sourceLine" id="cb19-2" data-line-number="2"><span class="dt">xlab=</span><span class="st">&quot;latitude&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;logRR&quot;</span>)</a></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-18-2.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-19-2.png" width="672" /></p>
 </div>
 </div>
             </section>
