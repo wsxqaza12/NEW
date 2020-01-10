@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Example 2 - Rimonabant | [NTU 108] Meta analysis</title>
+  <meta name="description" content="Example 2 - Rimonabant | [NTU 108] Meta analysis" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Example 2 - Rimonabant | [NTU 108] Meta analysis" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="wsxqaza12/NTU-108-Meta-Analysis" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Example 2 - Rimonabant | [NTU 108] Meta analysis" />
+  
+  
+  
+
+<meta name="author" content="林先和 杜裕康 張齡尹" />
+
+
+<meta name="date" content="2020-01-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="example-1-binary-data.html"/>
+<link rel="next" href="example-3-passive-smoking.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link rel="icon" href="images/LOGO.ico" type="image/x-icon" / >
+<link rel="shortcut icon" href="images/LOGO.ico" type="image/x-icon" / >
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">[NTU 108] Meta analysis</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Description</a></li>
+<li class="chapter" data-level="1" data-path="strart-r.html"><a href="strart-r.html"><i class="fa fa-check"></i><b>1</b> Strart R</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1.1</b> Introduction</a><ul>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#installing-r-rstudio"><i class="fa fa-check"></i>Installing R &amp; RStudio</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#start-r"><i class="fa fa-check"></i>Start R!</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#open-script"><i class="fa fa-check"></i>Open script</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#install-packages"><i class="fa fa-check"></i>Install packages</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#getting-help"><i class="fa fa-check"></i>Getting help</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#read-data"><i class="fa fa-check"></i>Read data</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#save-and-open-a-r-file-.rdata"><i class="fa fa-check"></i>Save and open a R file (.RData)</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="meta-metafor-packages.html"><a href="meta-metafor-packages.html"><i class="fa fa-check"></i><b>1.2</b> <code>meta</code> &amp; <code>metafor</code> packages</a><ul>
+<li><a href="meta-metafor-packages.html#brief-introduction-of-meta-packages">Brief introduction of <code>meta</code> packages</a></li>
+<li><a href="meta-metafor-packages.html#brief-introduction-of-metafor-packages">Brief introduction of <code>metafor</code> packages</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="binary-and-continuous-data.html"><a href="binary-and-continuous-data.html"><i class="fa fa-check"></i><b>2</b> Binary and Continuous data</a><ul>
+<li class="chapter" data-level="" data-path="example-1-binary-data.html"><a href="example-1-binary-data.html"><i class="fa fa-check"></i>Example 1 - Binary data</a><ul>
+<li class="chapter" data-level="" data-path="example-1-binary-data.html"><a href="example-1-binary-data.html#a.-four-variables-2x2-data"><i class="fa fa-check"></i>1a. Four variables (2x2 data)</a></li>
+<li class="chapter" data-level="" data-path="example-1-binary-data.html"><a href="example-1-binary-data.html#b.-two-variables"><i class="fa fa-check"></i>1b. Two variables</a></li>
+<li class="chapter" data-level="" data-path="example-1-binary-data.html"><a href="example-1-binary-data.html#c.-alternative-methods-for-fixed-effect-analysis"><i class="fa fa-check"></i>1c. Alternative methods for fixed-effect analysis</a></li>
+<li class="chapter" data-level="" data-path="example-1-binary-data.html"><a href="example-1-binary-data.html#d.-random-effects-model"><i class="fa fa-check"></i>1d. Random-effects model</a></li>
+<li class="chapter" data-level="" data-path="example-1-binary-data.html"><a href="example-1-binary-data.html#e.-heterogeneity-assessment"><i class="fa fa-check"></i>1e. Heterogeneity assessment</a></li>
+<li class="chapter" data-level="" data-path="example-1-binary-data.html"><a href="example-1-binary-data.html#f.-exploring-the-source-of-heterogeneity"><i class="fa fa-check"></i>1f. Exploring the source of heterogeneity</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="example-2-rimonabant.html"><a href="example-2-rimonabant.html"><i class="fa fa-check"></i>Example 2 - Rimonabant</a><ul>
+<li class="chapter" data-level="" data-path="example-2-rimonabant.html"><a href="example-2-rimonabant.html#a.-six-variables"><i class="fa fa-check"></i>2a. Six variables</a></li>
+<li class="chapter" data-level="" data-path="example-2-rimonabant.html"><a href="example-2-rimonabant.html#b.-two-or-three-variables"><i class="fa fa-check"></i>2b. Two or three variables</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="example-3-passive-smoking.html"><a href="example-3-passive-smoking.html"><i class="fa fa-check"></i>Example 3 - Passive smoking</a><ul>
+<li class="chapter" data-level="" data-path="example-3-passive-smoking.html"><a href="example-3-passive-smoking.html#a.-funnel-plot-using-the-original-odds-ratio"><i class="fa fa-check"></i>3a. Funnel plot using the original odds ratio</a></li>
+<li class="chapter" data-level="" data-path="example-3-passive-smoking.html"><a href="example-3-passive-smoking.html#b.-contour-enhanced-funnel-plot"><i class="fa fa-check"></i>3b. Contour-enhanced funnel plot</a></li>
+<li class="chapter" data-level="" data-path="example-3-passive-smoking.html"><a href="example-3-passive-smoking.html#c.-statistical-test-for-funnel-plot-asymmetry"><i class="fa fa-check"></i>3c. Statistical test for funnel plot asymmetry</a></li>
+<li class="chapter" data-level="" data-path="example-3-passive-smoking.html"><a href="example-3-passive-smoking.html#d.-using-the-trim-and-fill-method"><i class="fa fa-check"></i>3d. Using the trim and fill method</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="diagnostic-test.html"><a href="diagnostic-test.html"><i class="fa fa-check"></i><b>3</b> Diagnostic Test</a><ul>
+<li class="chapter" data-level="" data-path="exercise-1-nishiumra.html"><a href="exercise-1-nishiumra.html"><i class="fa fa-check"></i>Exercise 1 - Nishiumra</a><ul>
+<li class="chapter" data-level="" data-path="exercise-1-nishiumra.html"><a href="exercise-1-nishiumra.html#a.-univariate-analysis"><i class="fa fa-check"></i>1a. Univariate Analysis</a></li>
+<li class="chapter" data-level="" data-path="exercise-1-nishiumra.html"><a href="exercise-1-nishiumra.html#b.-forest-plot"><i class="fa fa-check"></i>1b. Forest plot</a></li>
+<li class="chapter" data-level="" data-path="exercise-1-nishiumra.html"><a href="exercise-1-nishiumra.html#c.-bivariate-analysis"><i class="fa fa-check"></i>1c. Bivariate Analysis</a></li>
+<li class="chapter" data-level="" data-path="exercise-1-nishiumra.html"><a href="exercise-1-nishiumra.html#d.-sroc"><i class="fa fa-check"></i>1d. SROC</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-2-tseng.html"><a href="exercise-2-tseng.html"><i class="fa fa-check"></i>Exercise 2 - Tseng</a><ul>
+<li class="chapter" data-level="" data-path="exercise-2-tseng.html"><a href="exercise-2-tseng.html#a.-univariate-analysis-1"><i class="fa fa-check"></i>2a. Univariate Analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="prevalence-and-survival-data.html"><a href="prevalence-and-survival-data.html"><i class="fa fa-check"></i><b>4</b> Prevalence and Survival data</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/wsxqaza12/NTU-108-Meta-Analysis" target="blank">Published in Github</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">[NTU 108] Meta analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="example-2---rimonabant" class="section level2 unnumbered">
+<h2>Example 2 - Rimonabant</h2>
+<p><strong>Rimonabant example. (Read the paper by Christensen et al in Lancet 2007 for details)</strong></p>
+<p>Using command <code>metacont</code> in the <code>meta</code> package</p>
+<p>Read in the data</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">rimonabant &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;~/Desktop/meta/Lab_day1/rimonabant.csv&quot;</span>)</a></code></pre></div>
+<div id="a.-six-variables" class="section level3 unnumbered">
+<h3>2a. Six variables</h3>
+<p>The six-variable command is for the comparison of difference in means between treatment (exposed) and control (unexposed) group, and the order has to be: the number of events in the treatment group, the effect size in the treatment group, the standard deviation of effect size in the treatment group, the number of events in the control group, the effect size in the control group, the standard deviation of effect size in the control group.</p>
+<p>Now, in the command window type:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="kw">library</span>(meta)</a>
+<a class="sourceLine" id="cb21-2" data-line-number="2">rimonabant.iv &lt;-<span class="st"> </span><span class="kw">metacont</span>(<span class="dt">n.e =</span> txn, <span class="dt">mean.e =</span> txef, <span class="dt">sd.e =</span> txsd, <span class="dt">n.c =</span> cnn, <span class="dt">mean.c =</span> cnef, <span class="dt">sd.c =</span> cnsd, <span class="dt">studlab =</span> study, <span class="dt">method.tau=</span><span class="st">&quot;DL&quot;</span>,<span class="dt">sm=</span><span class="st">&quot;MD&quot;</span>,<span class="dt">data =</span> rimonabant)</a></code></pre></div>
+<p>First use <code>library</code> command to load the add-on <code>meta</code> package, then use the <code>metacont</code> command to conduct a meta-analysis, and save the results in the object <code>rimonabant.iv</code>.</p>
+<p>You can specify the type of summary measure you want to use: <code>sm=( &quot;MD&quot;, &quot;SMD&quot;)</code></p>
+<table class="table" style="font-size: 14px; width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+Summary measures
+</th>
+<th style="text-align:left;">
+R code
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Mean difference
+</td>
+<td style="text-align:left;">
+sm=“MD”
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Standardised mean difference
+</td>
+<td style="text-align:left;">
+sm=“SMD”
+</td>
+</tr>
+</tbody>
+</table>
+<p>And the statistical methods for pooling: <code>method.tau=( &quot;DL&quot;, &quot;REML&quot;, or &quot;ML&quot;)</code>.</p>
+<p>Then type <code>rimonabant.iv</code> to call the results of the analysis.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1">rimonabant.iv</a></code></pre></div>
+<pre><code>##                        MD             95%-CI %W(fixed) %W(random)
+## RIO-Europe        -4.8000 [-5.7211; -3.8789]      15.2       20.8
+## RIO-Lipids        -5.4000 [-6.2330; -4.5670]      18.5       22.8
+## RIO-North America -4.7000 [-5.2842; -4.1158]      37.7       29.3
+## RIO-Diabetes      -3.9000 [-4.5704; -3.2296]      28.6       27.0
+## 
+## Number of studies combined: k = 4
+## 
+##                           MD             95%-CI      z  p-value
+## Fixed effect model   -4.6160 [-4.9746; -4.2573] -25.23 &lt; 0.0001
+## Random effects model -4.6648 [-5.2678; -4.0618] -15.16 &lt; 0.0001
+## 
+## Quantifying heterogeneity:
+## tau^2 = 0.2337; H = 1.63 [1.00; 2.82]; I^2 = 62.6% [0.0%; 87.4%]
+## 
+## Test of heterogeneity:
+##     Q d.f. p-value
+##  8.02    3  0.0457
+## 
+## Details on meta-analytical method:
+## - Inverse variance method
+## - DerSimonian-Laird estimator for tau^2</code></pre>
+<p>Now type in the following:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="kw">metacont</span>(<span class="dt">n.e =</span> txn, <span class="dt">mean.e =</span> txef, <span class="dt">sd.e =</span> txsd, <span class="dt">n.c =</span> cnn, <span class="dt">mean.c =</span> cnef, <span class="dt">sd.c =</span> cnsd, <span class="dt">studlab =</span> study, <span class="dt">method.tau=</span><span class="st">&quot;DL&quot;</span>, <span class="dt">sm=</span><span class="st">&quot;SMD&quot;</span>, <span class="dt">method.smd =</span> <span class="st">&quot;Cohen&quot;</span>,<span class="dt">data =</span> rimonabant)</a></code></pre></div>
+<pre><code>##                       SMD             95%-CI %W(fixed) %W(random)
+## RIO-Europe        -0.6916 [-0.8331; -0.5501]      21.8       24.5
+## RIO-Lipids        -0.9677 [-1.1256; -0.8097]      17.5       22.2
+## RIO-North America -0.7833 [-0.8840; -0.6827]      43.0       31.0
+## RIO-Diabetes      -0.8741 [-1.0306; -0.7175]      17.8       22.4
+## 
+## Number of studies combined: k = 4
+## 
+##                          SMD             95%-CI      z  p-value
+## Fixed effect model   -0.8117 [-0.8777; -0.7457] -24.11 &lt; 0.0001
+## Random effects model -0.8221 [-0.9298; -0.7144] -14.96 &lt; 0.0001
+## 
+## Quantifying heterogeneity:
+## tau^2 = 0.0071; H = 1.57 [1.00; 2.72]; I^2 = 59.6% [0.0%; 86.5%]
+## 
+## Test of heterogeneity:
+##     Q d.f. p-value
+##  7.43    3  0.0594
+## 
+## Details on meta-analytical method:
+## - Inverse variance method
+## - DerSimonian-Laird estimator for tau^2
+## - Cohen&#39;s d (standardised mean difference)</code></pre>
+<p>The <code>method.smd = &quot;Cohen&quot;</code> option means that we are calculating the Cohen’s d (standardized mean difference) of each study.</p>
+<p>The different method is used to estimate the standardised mean difference: <code>method.smd=( &quot;Hedges&quot;, &quot;Cohen&quot;, or &quot;Glass&quot;)</code></p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1">knitr<span class="op">::</span><span class="kw">kable</span>(</a>
+<a class="sourceLine" id="cb26-2" data-line-number="2">  tibble<span class="op">::</span><span class="kw">tibble</span>(<span class="st">`</span><span class="dt">Method</span><span class="st">`</span>=<span class="kw">c</span>(<span class="st">&quot; Hedges’g (default) &quot;</span>,<span class="st">&quot;Cohen’s d &quot;</span>, <span class="st">&quot;Glass’ delta&quot;</span>), <span class="st">`</span><span class="dt">R code</span><span class="st">`</span>=<span class="kw">c</span>(<span class="st">&#39;method.smd =&quot;Hedges&quot;&#39;</span>, <span class="st">&#39;method.smd =&quot;Cohen&quot;&#39;</span>, <span class="st">&#39;method.smd =&quot;Glass&quot;&#39;</span>)))<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb26-3" data-line-number="3"><span class="st">  </span>kableExtra<span class="op">::</span><span class="kw">kable_styling</span>(<span class="dt">full_width =</span> F, <span class="dt">position =</span> <span class="st">&quot;left&quot;</span>, <span class="dt">font_size =</span> <span class="dv">14</span>)</a></code></pre></div>
+<table class="table" style="font-size: 14px; width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+Method
+</th>
+<th style="text-align:left;">
+R code
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Hedges’g (default)
+</td>
+<td style="text-align:left;">
+method.smd =“Hedges”
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cohen’s d
+</td>
+<td style="text-align:left;">
+method.smd =“Cohen”
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Glass’ delta
+</td>
+<td style="text-align:left;">
+method.smd =“Glass”
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="b.-two-or-three-variables" class="section level3 unnumbered">
+<h3>2b. Two or three variables</h3>
+<p>The two- or three-variable commands are just like the ones used in the binary data, and are for generic (pre-calculated) effect size and standard error (or lower and upper limits). Note that for difference in means there is no need to log transform the data.
+<strong>Two variables:</strong> <code>metagen(logRR, selogRR, studlab=trialnam,sm=&quot;RR&quot;,data=bcg)</code></p>
+<p>In the command window, type:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1">rimonabant<span class="op">$</span>TE &lt;-<span class="st"> </span>rimonabant<span class="op">$</span>txef <span class="op">-</span><span class="st"> </span>rimonabant<span class="op">$</span>cnef</a>
+<a class="sourceLine" id="cb27-2" data-line-number="2">rimonabant<span class="op">$</span>seTE &lt;-<span class="st"> </span><span class="kw">sqrt</span>(rimonabant<span class="op">$</span>txsd<span class="op">^</span><span class="dv">2</span><span class="op">/</span>rimonabant<span class="op">$</span>txn <span class="op">+</span><span class="st"> </span>rimonabant<span class="op">$</span>cnsd<span class="op">^</span><span class="dv">2</span><span class="op">/</span>rimonabant<span class="op">$</span>cnn)</a></code></pre></div>
+<p>(This generates the necessary input for the two-variable command)</p>
+<p>Then type:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1">rimonabant.iv<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">metagen</span>(TE, seTE, <span class="dt">studlab =</span> study, <span class="dt">sm=</span><span class="st">&quot;MD&quot;</span>, <span class="dt">data =</span> rimonabant)</a></code></pre></div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="example-1-binary-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="example-3-passive-smoking.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-binary_continuous.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
