@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Exercise 1 - ismail (Prevalence data) | [NTU 108] Meta analysis</title>
+  <meta name="description" content="Exercise 1 - ismail (Prevalence data) | [NTU 108] Meta analysis" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Exercise 1 - ismail (Prevalence data) | [NTU 108] Meta analysis" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="wsxqaza12/NTU-108-Meta-Analysis" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Exercise 1 - ismail (Prevalence data) | [NTU 108] Meta analysis" />
+  
+  
+  
+
+<meta name="author" content="林先和 杜裕康 張齡尹" />
+
+
+<meta name="date" content="2020-01-11" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="prevalence-and-survival-data.html"/>
+<link rel="next" href="exercise-2-nibali-incidence-data.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link rel="icon" href="images/LOGO.ico" type="image/x-icon" / >
+<link rel="shortcut icon" href="images/LOGO.ico" type="image/x-icon" / >
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">[NTU 108] Meta analysis</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Description</a></li>
+<li class="chapter" data-level="1" data-path="strart-r.html"><a href="strart-r.html"><i class="fa fa-check"></i><b>1</b> Strart R</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1.1</b> Introduction</a><ul>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#installing-r-rstudio"><i class="fa fa-check"></i>Installing R &amp; RStudio</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#start-r"><i class="fa fa-check"></i>Start R!</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#open-script"><i class="fa fa-check"></i>Open script</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#install-packages"><i class="fa fa-check"></i>Install packages</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#getting-help"><i class="fa fa-check"></i>Getting help</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#read-data"><i class="fa fa-check"></i>Read data</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#save-and-open-a-r-file-.rdata"><i class="fa fa-check"></i>Save and open a R file (.RData)</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="meta-metafor-packages.html"><a href="meta-metafor-packages.html"><i class="fa fa-check"></i><b>1.2</b> <code>meta</code> &amp; <code>metafor</code> packages</a><ul>
+<li><a href="meta-metafor-packages.html#brief-introduction-of-meta-packages">Brief introduction of <code>meta</code> packages</a></li>
+<li><a href="meta-metafor-packages.html#brief-introduction-of-metafor-packages">Brief introduction of <code>metafor</code> packages</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="binary-and-continuous-data.html"><a href="binary-and-continuous-data.html"><i class="fa fa-check"></i><b>2</b> Binary and Continuous data</a><ul>
+<li class="chapter" data-level="" data-path="example-1-bcg.html"><a href="example-1-bcg.html"><i class="fa fa-check"></i>Example 1 - BCG</a><ul>
+<li class="chapter" data-level="" data-path="example-1-bcg.html"><a href="example-1-bcg.html#a.-four-variables-2x2-data"><i class="fa fa-check"></i>1a. Four variables (2x2 data)</a></li>
+<li class="chapter" data-level="" data-path="example-1-bcg.html"><a href="example-1-bcg.html#b.-two-variables"><i class="fa fa-check"></i>1b. Two variables</a></li>
+<li class="chapter" data-level="" data-path="example-1-bcg.html"><a href="example-1-bcg.html#c.-alternative-methods-for-fixed-effect-analysis"><i class="fa fa-check"></i>1c. Alternative methods for fixed-effect analysis</a></li>
+<li class="chapter" data-level="" data-path="example-1-bcg.html"><a href="example-1-bcg.html#d.-random-effects-model"><i class="fa fa-check"></i>1d. Random-effects model</a></li>
+<li class="chapter" data-level="" data-path="example-1-bcg.html"><a href="example-1-bcg.html#e.-heterogeneity-assessment"><i class="fa fa-check"></i>1e. Heterogeneity assessment</a></li>
+<li class="chapter" data-level="" data-path="example-1-bcg.html"><a href="example-1-bcg.html#f.-exploring-the-source-of-heterogeneity"><i class="fa fa-check"></i>1f. Exploring the source of heterogeneity</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="example-2-rimonabant.html"><a href="example-2-rimonabant.html"><i class="fa fa-check"></i>Example 2 - Rimonabant</a><ul>
+<li class="chapter" data-level="" data-path="example-2-rimonabant.html"><a href="example-2-rimonabant.html#a.-six-variables"><i class="fa fa-check"></i>2a. Six variables</a></li>
+<li class="chapter" data-level="" data-path="example-2-rimonabant.html"><a href="example-2-rimonabant.html#b.-two-variables-1"><i class="fa fa-check"></i>2b. Two variables</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="example-3-passive-smoking.html"><a href="example-3-passive-smoking.html"><i class="fa fa-check"></i>Example 3 - Passive smoking</a><ul>
+<li class="chapter" data-level="" data-path="example-3-passive-smoking.html"><a href="example-3-passive-smoking.html#a.-funnel-plot-using-the-original-odds-ratio"><i class="fa fa-check"></i>3a. Funnel plot using the original odds ratio</a></li>
+<li class="chapter" data-level="" data-path="example-3-passive-smoking.html"><a href="example-3-passive-smoking.html#b.-contour-enhanced-funnel-plot"><i class="fa fa-check"></i>3b. Contour-enhanced funnel plot</a></li>
+<li class="chapter" data-level="" data-path="example-3-passive-smoking.html"><a href="example-3-passive-smoking.html#c.-statistical-test-for-funnel-plot-asymmetry"><i class="fa fa-check"></i>3c. Statistical test for funnel plot asymmetry</a></li>
+<li class="chapter" data-level="" data-path="example-3-passive-smoking.html"><a href="example-3-passive-smoking.html#d.-using-the-trim-and-fill-method"><i class="fa fa-check"></i>3d. Using the trim and fill method</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="diagnostic-test.html"><a href="diagnostic-test.html"><i class="fa fa-check"></i><b>3</b> Diagnostic Test</a><ul>
+<li class="chapter" data-level="" data-path="exercise-1-nishiumra.html"><a href="exercise-1-nishiumra.html"><i class="fa fa-check"></i>Exercise 1 - Nishiumra</a><ul>
+<li class="chapter" data-level="" data-path="exercise-1-nishiumra.html"><a href="exercise-1-nishiumra.html#a.-univariate-analysis"><i class="fa fa-check"></i>1a. Univariate Analysis</a></li>
+<li class="chapter" data-level="" data-path="exercise-1-nishiumra.html"><a href="exercise-1-nishiumra.html#b.-forest-plot"><i class="fa fa-check"></i>1b. Forest plot</a></li>
+<li class="chapter" data-level="" data-path="exercise-1-nishiumra.html"><a href="exercise-1-nishiumra.html#c.-bivariate-analysis"><i class="fa fa-check"></i>1c. Bivariate Analysis</a></li>
+<li class="chapter" data-level="" data-path="exercise-1-nishiumra.html"><a href="exercise-1-nishiumra.html#d.-sroc"><i class="fa fa-check"></i>1d. SROC</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-2-tseng.html"><a href="exercise-2-tseng.html"><i class="fa fa-check"></i>Exercise 2 - Tseng</a><ul>
+<li class="chapter" data-level="" data-path="exercise-2-tseng.html"><a href="exercise-2-tseng.html#a.-univariate-analysis-1"><i class="fa fa-check"></i>2a. Univariate Analysis</a></li>
+<li class="chapter" data-level="" data-path="exercise-2-tseng.html"><a href="exercise-2-tseng.html#b.-forest-plot-1"><i class="fa fa-check"></i>2b. Forest plot</a></li>
+<li class="chapter" data-level="" data-path="exercise-2-tseng.html"><a href="exercise-2-tseng.html#c.-bivariate-analysis-1"><i class="fa fa-check"></i>2c. Bivariate Analysis</a></li>
+<li class="chapter" data-level="" data-path="exercise-2-tseng.html"><a href="exercise-2-tseng.html#d.-sroc-1"><i class="fa fa-check"></i>2d. SROC</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-3-cbcl.html"><a href="exercise-3-cbcl.html"><i class="fa fa-check"></i>Exercise 3 - CBCL</a><ul>
+<li class="chapter" data-level="" data-path="exercise-3-cbcl.html"><a href="exercise-3-cbcl.html#a.-univariate-analysis-2"><i class="fa fa-check"></i>3a. Univariate Analysis</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-cbcl.html"><a href="exercise-3-cbcl.html#b.-forest-plot-2"><i class="fa fa-check"></i>3b. Forest plot</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-cbcl.html"><a href="exercise-3-cbcl.html#c.-bivariate-analysis-2"><i class="fa fa-check"></i>3c. Bivariate Analysis</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-cbcl.html"><a href="exercise-3-cbcl.html#d.-sroc-2"><i class="fa fa-check"></i>3d. SROC</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="prevalence-and-survival-data.html"><a href="prevalence-and-survival-data.html"><i class="fa fa-check"></i><b>4</b> Prevalence and Survival data</a><ul>
+<li class="chapter" data-level="" data-path="exercise-1-ismail-prevalence-data.html"><a href="exercise-1-ismail-prevalence-data.html"><i class="fa fa-check"></i>Exercise 1 - ismail (Prevalence data)</a><ul>
+<li class="chapter" data-level="" data-path="exercise-1-ismail-prevalence-data.html"><a href="exercise-1-ismail-prevalence-data.html#method-1---binomial-distribution"><i class="fa fa-check"></i>1.1 Method 1 - Binomial distribution</a></li>
+<li class="chapter" data-level="" data-path="exercise-1-ismail-prevalence-data.html"><a href="exercise-1-ismail-prevalence-data.html#method-2---logit-transformation"><i class="fa fa-check"></i>1.2 Method 2 - Logit Transformation</a></li>
+<li class="chapter" data-level="" data-path="exercise-1-ismail-prevalence-data.html"><a href="exercise-1-ismail-prevalence-data.html#method-3---freeman-tukey-double-arcsine-transformation"><i class="fa fa-check"></i>1.3 Method 3 - Freeman-Tukey Double Arcsine Transformation</a></li>
+<li class="chapter" data-level="" data-path="exercise-1-ismail-prevalence-data.html"><a href="exercise-1-ismail-prevalence-data.html#method-4---glmm-method-for-prevalence-data"><i class="fa fa-check"></i>1.4 Method 4 - GLMM Method for prevalence data</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-2-nibali-incidence-data.html"><a href="exercise-2-nibali-incidence-data.html"><i class="fa fa-check"></i>Exercise 2 - nibali (Incidence data)</a><ul>
+<li class="chapter" data-level="" data-path="exercise-2-nibali-incidence-data.html"><a href="exercise-2-nibali-incidence-data.html#log-transformation"><i class="fa fa-check"></i>2.1 Log Transformation</a></li>
+<li class="chapter" data-level="" data-path="exercise-2-nibali-incidence-data.html"><a href="exercise-2-nibali-incidence-data.html#glmm-method-for-incidence-data"><i class="fa fa-check"></i>2.2 GLMM Method for incidence data</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-3-suvival-data.html"><a href="exercise-3-suvival-data.html"><i class="fa fa-check"></i>Exercise 3 - Suvival data</a><ul>
+<li class="chapter" data-level="" data-path="exercise-3-suvival-data.html"><a href="exercise-3-suvival-data.html#scenario-1---reporting-hr-and-its-ci"><i class="fa fa-check"></i>3.1 Scenario 1 - Reporting HR and its CI</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-suvival-data.html"><a href="exercise-3-suvival-data.html#scenario-2---reporting-median-survival-time"><i class="fa fa-check"></i>3.2 Scenario 2 - Reporting median survival time</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/wsxqaza12/NTU-108-Meta-Analysis" target="blank">Published in Github</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">[NTU 108] Meta analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="exercise-1---ismail-prevalence-data" class="section level2 unnumbered">
+<h2>Exercise 1 - ismail (Prevalence data)</h2>
+<p>Then we read the csv file without setting the working directory, you can refer to this chapter <a href="#intro"><strong>??</strong></a>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co"># Read data - ismail</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">ismail &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;~/Desktop/meta/Lab_day2/ismail.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="kw">print</span>(ismail)</a></code></pre></div>
+<table>
+<caption><span id="tab:ismail-data">Table 4.1: </span>A table of the first 5 rows of Ismail data.</caption>
+<thead>
+<tr class="header">
+<th align="left">AuthorYear</th>
+<th align="left">countrycontinent</th>
+<th align="right">numberofparticipants</th>
+<th align="right">rate</th>
+<th align="right">events</th>
+<th align="left">diagnosisofdepression</th>
+<th align="left">referralsource</th>
+<th align="left">author</th>
+<th align="right">year</th>
+<th align="right">referral</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Baiyewu, 2012</td>
+<td align="left">Nigeria, Africa</td>
+<td align="right">53</td>
+<td align="right">0.46</td>
+<td align="right">24</td>
+<td align="left">NPI</td>
+<td align="left">Community-Based</td>
+<td align="left">?Baiyewu</td>
+<td align="right">2012</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Brodaty, 2012</td>
+<td align="left">Australia, Australia</td>
+<td align="right">319</td>
+<td align="right">0.15</td>
+<td align="right">48</td>
+<td align="left">NPI</td>
+<td align="left">Community-Based</td>
+<td align="left">Brodaty</td>
+<td align="right">2012</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">Chan, 2003</td>
+<td align="left">USA, North America</td>
+<td align="right">121</td>
+<td align="right">0.16</td>
+<td align="right">19</td>
+<td align="left">NPI</td>
+<td align="left">Community-Based</td>
+<td align="left">Chan</td>
+<td align="right">2003</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Chan, 2010</td>
+<td align="left">Hong Kong, Asia</td>
+<td align="right">338</td>
+<td align="right">0.14</td>
+<td align="right">47</td>
+<td align="left">NPI</td>
+<td align="left">Community-Based</td>
+<td align="left">Chan</td>
+<td align="right">2010</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">Colenda, 2010</td>
+<td align="left">USA, North America</td>
+<td align="right">215</td>
+<td align="right">0.22</td>
+<td align="right">47</td>
+<td align="left">DSM</td>
+<td align="left">Community-Based</td>
+<td align="left">Colenda</td>
+<td align="right">2010</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>The meaning of covariates in data</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Covariates</th>
+<th align="left">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">numberofparticipants</td>
+<td align="left">number of participants</td>
+</tr>
+<tr class="even">
+<td align="left">rate</td>
+<td align="left">prevalence of each study</td>
+</tr>
+<tr class="odd">
+<td align="left">events</td>
+<td align="left">number of events</td>
+</tr>
+<tr class="even">
+<td align="left">AuthorYear</td>
+<td align="left">name of study</td>
+</tr>
+</tbody>
+</table>
+<div id="method-1---binomial-distribution" class="section level3 unnumbered">
+<h3>1.1 Method 1 - Binomial distribution</h3>
+<div id="a.-generate-new-variable-for-variance" class="section level4 unnumbered">
+<h4>1.1a. Generate new variable for variance</h4>
+<p>First of all, we have to generate a new variable for the variance of the rate. You can find the details for the formula on page 10 of the handout, which is <span class="math inline">\(var(p)={p*(1-p)}/n\)</span>. Then, we can obtain standard error from variance, consequently.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="co"># Generate a new variable for the variance of rate</span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">ismail<span class="op">$</span>ratevar &lt;-<span class="st"> </span>(ismail<span class="op">$</span>rate<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>ismail<span class="op">$</span>rate))<span class="op">/</span>ismail<span class="op">$</span>numberofparticipants</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co"># Generate SE = squared root of ratevar</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">ismail<span class="op">$</span>ratese &lt;-<span class="st"> </span><span class="kw">sqrt</span>(ismail<span class="op">$</span>ratevar)</a></code></pre></div>
+<p>(This generates the necessary input for the <code>metagen</code> command)</p>
+</div>
+<div id="b.-use-metagen-to-carry-out-the-meta-analysis" class="section level4 unnumbered">
+<h4>1.1b. Use <code>metagen</code> to carry out the meta-analysis</h4>
+<p>Use command <code>metagen</code> in the <code>meta</code> package</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co"># Use metagen to carry out the meta-analysis</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">ismail.gen &lt;-<span class="st"> </span><span class="kw">metagen</span>(rate, ratese, <span class="dt">studlab =</span> AuthorYear, <span class="dt">data =</span> ismail)</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">ismail.gen</a></code></pre></div>
+<pre><code>##                                           95%-CI %W(fixed) %W(random)
+## Baiyewu, 2012            0.4600 [0.3258; 0.5942]       0.2        1.5
+## Brodaty, 2012            0.1500 [0.1108; 0.1892]       1.8        1.9
+## Chan, 2003               0.1600 [0.0947; 0.2253]       0.6        1.9
+## Chan, 2010               0.1400 [0.1030; 0.1770]       2.0        2.0
+## Colenda, 2010            0.2200 [0.1646; 0.2754]       0.9        1.9
+## Dlugaj, 2015             0.1700 [0.1395; 0.2005]       2.9        2.0
+## Feng, 2009               0.1100 [0.0568; 0.1632]       1.0        1.9
+## ?Hinton, 2003            0.4400 [0.3111; 0.5689]       0.2        1.5
+## Juarez-Cedillo, 2012     0.1500 [0.0992; 0.2008]       1.1        1.9
+## Kumar, 2006              0.1700 [0.0333; 0.3067]       0.1        1.5
+## Lam, 2007                0.1600 [0.1085; 0.2115]       1.0        1.9
+## Lopez-Anton, 2015        0.3500 [0.2980; 0.4020]       1.0        1.9
+## Luppa, 2012              0.4900 [0.4116; 0.5684]       0.4        1.8
+## Lyketsos, 2002           0.2600 [0.2119; 0.3081]       1.2        1.9
+## Moretti, 2013            0.1500 [0.1341; 0.1659]      10.8        2.0
+## O&#39;Bryant, 2013           0.3500 [0.2770; 0.4230]       0.5        1.8
+## Okura, 2010              0.2900 [0.2324; 0.3476]       0.8        1.9
+## Palmer, 2007             0.3500 [0.2136; 0.4864]       0.1        1.5
+## ?Peters, 2012            0.1700 [0.1364; 0.2036]       2.4        2.0
+## Pink , 2015              0.2500 [0.2034; 0.2966]       1.3        1.9
+## Potvin, 2012             0.1100 [0.0699; 0.1501]       1.7        1.9
+## Ravaglia, 2008           0.4400 [0.3253; 0.5547]       0.2        1.6
+## Richard, 2013            0.2400 [0.1996; 0.2804]       1.7        1.9
+## Solfrizzi, 2007          0.6300 [0.5497; 0.7103]       0.4        1.8
+## Tatsch, 2006             0.2500 [0.0803; 0.4197]       0.1        1.3
+## Van der Linde, 2010      0.1500 [0.1145; 0.1855]       2.2        2.0
+## Weyerer, 2008            0.1300 [0.1069; 0.1531]       5.1        2.0
+## Yaffe, 2011              0.1800 [0.1366; 0.2234]       1.4        1.9
+## Chao, 2014               0.3400 [0.2074; 0.4726]       0.2        1.5
+## Chilovi, 2009            0.4700 [0.3822; 0.5578]       0.4        1.8
+## Chiu, 2007               0.4100 [0.2595; 0.5605]       0.1        1.4
+## Di Iulio, 2010           0.3800 [0.2952; 0.4648]       0.4        1.8
+## Edwards, 2009            0.3500 [0.3090; 0.3910]       1.6        1.9
+## Elfgren, 2010            0.3300 [0.1335; 0.5265]       0.1        1.2
+## Feldman, 2004            0.4800 [0.4398; 0.5202]       1.7        1.9
+## Fern?ndez-Mart?nez, 2010 0.3300 [0.2334; 0.4266]       0.3        1.7
+## Forrester, 2015          0.2200 [0.1803; 0.2597]       1.7        1.9
+## Gabryelewicz, 2004       0.4700 [0.3731; 0.5669]       0.3        1.7
+## Gallagher, 2011          0.2400 [0.1740; 0.3060]       0.6        1.9
+## Gallassi, 2008           0.7900 [0.6760; 0.9040]       0.2        1.6
+## Hudon, 2008              0.3900 [0.2459; 0.5341]       0.1        1.5
+## Kim, 2015                0.5100 [0.4697; 0.5503]       1.7        1.9
+## Kosteniuk, 2014          0.5000 [0.3628; 0.6372]       0.1        1.5
+## Lach, 2010               0.5900 [0.4623; 0.7177]       0.2        1.6
+## Lee, 2008                0.2000 [0.1599; 0.2401]       1.7        1.9
+## Lehrner, 2014            0.4800 [0.4132; 0.5468]       0.6        1.9
+## Li, 2001                 0.3300 [0.1289; 0.5311]       0.1        1.2
+## Lopez, 2005              0.6000 [0.5364; 0.6636]       0.7        1.9
+## Modrego, 2004            0.3700 [0.2814; 0.4586]       0.3        1.8
+## Muangpaisan, 2008        0.4600 [0.3487; 0.5713]       0.2        1.6
+## Palmer, 2010             0.5000 [0.4144; 0.5856]       0.4        1.8
+## Rozzini, 2008            0.4100 [0.3313; 0.4887]       0.4        1.8
+## Serra, 2010              0.5000 [0.2752; 0.7248]       0.1        1.1
+## Snowden, 2014            0.1400 [0.1319; 0.1481]      41.7        2.0
+## Van der Mussele, 2014    0.2300 [0.1690; 0.2910]       0.7        1.9
+## Vaughn, 2009             0.4200 [0.3118; 0.5282]       0.2        1.7
+## Zhang, 2012              0.2700 [0.1288; 0.4112]       0.1        1.5
+## 
+## Number of studies combined: k = 57
+## 
+##                                       95%-CI     z  p-value
+## Fixed effect model   0.1947 [0.1894; 0.1999] 73.15        0
+## Random effects model 0.3223 [0.2887; 0.3559] 18.80 &lt; 0.0001
+## 
+## Quantifying heterogeneity:
+## tau^2 = 0.0147; H = 5.55 [5.18; 5.95]; I^2 = 96.8% [96.3%; 97.2%]
+## 
+## Test of heterogeneity:
+##        Q d.f.  p-value
+##  1725.70   56 &lt; 0.0001
+## 
+## Details on meta-analytical method:
+## - Inverse variance method
+## - DerSimonian-Laird estimator for tau^2</code></pre>
+</div>
+<div id="c.-forest-plot" class="section level4">
+<h4><span class="header-section-number">4.0.0.1</span> 1.1c. Forest plot</h4>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">forest</span>(ismail.gen)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-7-1.png" width="1152" /></p>
+<p>If the forest plot cannot be seen fully, we can save this plot as pdf via the following command.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co"># Save forest plot as pdf #</span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw">pdf</span>(<span class="st">&quot;~/Desktop/meta/Lab_day2/ismail.pdf&quot;</span>,<span class="dt">height=</span><span class="dv">15</span>,<span class="dt">width=</span><span class="dv">12</span>)</a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="kw">forest</span>(ismail.gen)</a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="kw">dev.off</span>()</a></code></pre></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+</div>
+<div id="d.-subgroup-analysis-by-referral-source" class="section level4">
+<h4><span class="header-section-number">4.0.0.2</span> 1.1d. Subgroup Analysis by referral source</h4>
+<p>Let’s conduct subgroup analysis to explore the potential sources of the huge observed heterogeneity</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">ismail.gen.sub&lt;-<span class="kw">metagen</span>(rate, ratese, <span class="dt">studlab =</span> AuthorYear, <span class="dt">byvar =</span> referralsource, <span class="dt">data =</span> ismail)</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2">ismail.gen.sub</a></code></pre></div>
+<pre><code>##                                           95%-CI %W(fixed) %W(random)
+## Baiyewu, 2012            0.4600 [0.3258; 0.5942]       0.2        1.5
+## Brodaty, 2012            0.1500 [0.1108; 0.1892]       1.8        1.9
+## Chan, 2003               0.1600 [0.0947; 0.2253]       0.6        1.9
+## Chan, 2010               0.1400 [0.1030; 0.1770]       2.0        2.0
+## Colenda, 2010            0.2200 [0.1646; 0.2754]       0.9        1.9
+## Dlugaj, 2015             0.1700 [0.1395; 0.2005]       2.9        2.0
+## Feng, 2009               0.1100 [0.0568; 0.1632]       1.0        1.9
+## ?Hinton, 2003            0.4400 [0.3111; 0.5689]       0.2        1.5
+## Juarez-Cedillo, 2012     0.1500 [0.0992; 0.2008]       1.1        1.9
+## Kumar, 2006              0.1700 [0.0333; 0.3067]       0.1        1.5
+## Lam, 2007                0.1600 [0.1085; 0.2115]       1.0        1.9
+## Lopez-Anton, 2015        0.3500 [0.2980; 0.4020]       1.0        1.9
+## Luppa, 2012              0.4900 [0.4116; 0.5684]       0.4        1.8
+## Lyketsos, 2002           0.2600 [0.2119; 0.3081]       1.2        1.9
+## Moretti, 2013            0.1500 [0.1341; 0.1659]      10.8        2.0
+## O&#39;Bryant, 2013           0.3500 [0.2770; 0.4230]       0.5        1.8
+## Okura, 2010              0.2900 [0.2324; 0.3476]       0.8        1.9
+## Palmer, 2007             0.3500 [0.2136; 0.4864]       0.1        1.5
+## ?Peters, 2012            0.1700 [0.1364; 0.2036]       2.4        2.0
+## Pink , 2015              0.2500 [0.2034; 0.2966]       1.3        1.9
+## Potvin, 2012             0.1100 [0.0699; 0.1501]       1.7        1.9
+## Ravaglia, 2008           0.4400 [0.3253; 0.5547]       0.2        1.6
+## Richard, 2013            0.2400 [0.1996; 0.2804]       1.7        1.9
+## Solfrizzi, 2007          0.6300 [0.5497; 0.7103]       0.4        1.8
+## Tatsch, 2006             0.2500 [0.0803; 0.4197]       0.1        1.3
+## Van der Linde, 2010      0.1500 [0.1145; 0.1855]       2.2        2.0
+## Weyerer, 2008            0.1300 [0.1069; 0.1531]       5.1        2.0
+## Yaffe, 2011              0.1800 [0.1366; 0.2234]       1.4        1.9
+## Chao, 2014               0.3400 [0.2074; 0.4726]       0.2        1.5
+## Chilovi, 2009            0.4700 [0.3822; 0.5578]       0.4        1.8
+## Chiu, 2007               0.4100 [0.2595; 0.5605]       0.1        1.4
+## Di Iulio, 2010           0.3800 [0.2952; 0.4648]       0.4        1.8
+## Edwards, 2009            0.3500 [0.3090; 0.3910]       1.6        1.9
+## Elfgren, 2010            0.3300 [0.1335; 0.5265]       0.1        1.2
+## Feldman, 2004            0.4800 [0.4398; 0.5202]       1.7        1.9
+## Fern?ndez-Mart?nez, 2010 0.3300 [0.2334; 0.4266]       0.3        1.7
+## Forrester, 2015          0.2200 [0.1803; 0.2597]       1.7        1.9
+## Gabryelewicz, 2004       0.4700 [0.3731; 0.5669]       0.3        1.7
+## Gallagher, 2011          0.2400 [0.1740; 0.3060]       0.6        1.9
+## Gallassi, 2008           0.7900 [0.6760; 0.9040]       0.2        1.6
+## Hudon, 2008              0.3900 [0.2459; 0.5341]       0.1        1.5
+## Kim, 2015                0.5100 [0.4697; 0.5503]       1.7        1.9
+## Kosteniuk, 2014          0.5000 [0.3628; 0.6372]       0.1        1.5
+## Lach, 2010               0.5900 [0.4623; 0.7177]       0.2        1.6
+## Lee, 2008                0.2000 [0.1599; 0.2401]       1.7        1.9
+## Lehrner, 2014            0.4800 [0.4132; 0.5468]       0.6        1.9
+## Li, 2001                 0.3300 [0.1289; 0.5311]       0.1        1.2
+## Lopez, 2005              0.6000 [0.5364; 0.6636]       0.7        1.9
+## Modrego, 2004            0.3700 [0.2814; 0.4586]       0.3        1.8
+## Muangpaisan, 2008        0.4600 [0.3487; 0.5713]       0.2        1.6
+## Palmer, 2010             0.5000 [0.4144; 0.5856]       0.4        1.8
+## Rozzini, 2008            0.4100 [0.3313; 0.4887]       0.4        1.8
+## Serra, 2010              0.5000 [0.2752; 0.7248]       0.1        1.1
+## Snowden, 2014            0.1400 [0.1319; 0.1481]      41.7        2.0
+## Van der Mussele, 2014    0.2300 [0.1690; 0.2910]       0.7        1.9
+## Vaughn, 2009             0.4200 [0.3118; 0.5282]       0.2        1.7
+## Zhang, 2012              0.2700 [0.1288; 0.4112]       0.1        1.5
+##                          referralsource
+## Baiyewu, 2012                         2
+## Brodaty, 2012                         2
+## Chan, 2003                            2
+## Chan, 2010                            2
+## Colenda, 2010                         2
+## Dlugaj, 2015                          2
+## Feng, 2009                            2
+## ?Hinton, 2003                         2
+## Juarez-Cedillo, 2012                  2
+## Kumar, 2006                           2
+## Lam, 2007                             2
+## Lopez-Anton, 2015                     2
+## Luppa, 2012                           2
+## Lyketsos, 2002                        2
+## Moretti, 2013                         2
+## O&#39;Bryant, 2013                        2
+## Okura, 2010                           2
+## Palmer, 2007                          2
+## ?Peters, 2012                         2
+## Pink , 2015                           2
+## Potvin, 2012                          2
+## Ravaglia, 2008                        2
+## Richard, 2013                         2
+## Solfrizzi, 2007                       2
+## Tatsch, 2006                          2
+## Van der Linde, 2010                   2
+## Weyerer, 2008                         2
+## Yaffe, 2011                           2
+## Chao, 2014                            1
+## Chilovi, 2009                         1
+## Chiu, 2007                            1
+## Di Iulio, 2010                        1
+## Edwards, 2009                         1
+## Elfgren, 2010                         1
+## Feldman, 2004                         1
+## Fern?ndez-Mart?nez, 2010              1
+## Forrester, 2015                       1
+## Gabryelewicz, 2004                    1
+## Gallagher, 2011                       1
+## Gallassi, 2008                        1
+## Hudon, 2008                           1
+## Kim, 2015                             1
+## Kosteniuk, 2014                       1
+## Lach, 2010                            1
+## Lee, 2008                             1
+## Lehrner, 2014                         1
+## Li, 2001                              1
+## Lopez, 2005                           1
+## Modrego, 2004                         1
+## Muangpaisan, 2008                     1
+## Palmer, 2010                          1
+## Rozzini, 2008                         1
+## Serra, 2010                           1
+## Snowden, 2014                         1
+## Van der Mussele, 2014                 1
+## Vaughn, 2009                          1
+## Zhang, 2012                           1
+## 
+## Number of studies combined: k = 57
+## 
+##                                       95%-CI     z  p-value
+## Fixed effect model   0.1947 [0.1894; 0.1999] 73.15        0
+## Random effects model 0.3223 [0.2887; 0.3559] 18.80 &lt; 0.0001
+## 
+## Quantifying heterogeneity:
+## tau^2 = 0.0147; H = 5.55 [5.18; 5.95]; I^2 = 96.8% [96.3%; 97.2%]
+## 
+## Quantifying residual heterogeneity:
+## H = 5.57 [5.20; 5.98]; I^2 = 96.8% [96.3%; 97.2%]
+## 
+## Test of heterogeneity:
+##        Q d.f.  p-value
+##  1725.70   56 &lt; 0.0001
+## 
+## Results for subgroups (fixed effect model):
+##                                    k                  95%-CI       Q
+## referralsource = Clinic-Based     29 0.2043 [0.1974; 0.2113] 1300.61
+## referralsource = Community-Based  28 0.1819 [0.1739; 0.1898]  407.59
+##                                   tau^2   I^2
+## referralsource = Clinic-Based    0.0346 97.8%
+## referralsource = Community-Based 0.0070 93.4%
+## 
+## Test for subgroup differences (fixed effect model):
+##                      Q d.f.  p-value
+## Between groups   17.50    1 &lt; 0.0001
+## Within groups  1708.21   55 &lt; 0.0001
+## 
+## Results for subgroups (random effects model):
+##                                    k                  95%-CI       Q
+## referralsource = Clinic-Based     29 0.4023 [0.3317; 0.4729] 1300.61
+## referralsource = Community-Based  28 0.2426 [0.2091; 0.2762]  407.59
+##                                   tau^2   I^2
+## referralsource = Clinic-Based    0.0346 97.8%
+## referralsource = Community-Based 0.0070 93.4%
+## 
+## Test for subgroup differences (random effects model):
+##                      Q d.f.  p-value
+## Between groups   16.03    1 &lt; 0.0001
+## 
+## Details on meta-analytical method:
+## - Inverse variance method
+## - DerSimonian-Laird estimator for tau^2</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">forest</span>(ismail.gen.sub)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-9-1.png" width="1152" /></p>
+<p>Again, if the forest plot cannot be seen fully, we can save this plot as pdf file.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="co"># Save forest plot as pdf #</span></a>
+<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="kw">pdf</span>(<span class="st">&quot;~/Desktop/meta/Lab_day2/ismail_sub.pdf&quot;</span>,<span class="dt">height=</span><span class="dv">15</span>,<span class="dt">width=</span><span class="dv">12</span>)</a>
+<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="kw">forest</span>(ismail.gen.sub)</a>
+<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="kw">dev.off</span>()</a></code></pre></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+</div>
+</div>
+<div id="method-2---logit-transformation" class="section level3 unnumbered">
+<h3>1.2 Method 2 - Logit Transformation</h3>
+<div id="a.-use-metaprop-to-carry-out-the-meta-analysis" class="section level4 unnumbered">
+<h4>1.2a. Use <code>metaprop</code> to carry out the meta-analysis</h4>
+<p>Here, we will use command <code>metaprop</code> in the <code>meta</code> package to conduct the logit transformation of prevelance meta analysis.<br />
+Note that the command<code>metaprop</code> uses “number of events” and “number of participants”; however, the <code>metagen</code> uses “rate” and “ratese”.<br />
+The <code>metaprop</code> command is specially designed for the prevalence meta anylsis.<br />
+Now type :</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">ismail.logit &lt;-<span class="st"> </span><span class="kw">metaprop</span>(<span class="dt">event =</span> events, <span class="dt">n =</span> numberofparticipants, <span class="dt">studlab =</span> AuthorYear, <span class="dt">data =</span> ismail, <span class="dt">method =</span> <span class="st">&quot;Inverse&quot;</span>, <span class="dt">sm =</span> <span class="st">&quot;PLOGIT&quot;</span>)</a></code></pre></div>
+<p>You can specify the type of summary measure you want to use: sm=(“PLOGIT”, “PAS”, “PFT”, “PLN”, “PRAW”)</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Transformations</th>
+<th align="left">R_code</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Logit</td>
+<td align="left">PLOGIT</td>
+</tr>
+<tr class="even">
+<td align="left">Arcsine</td>
+<td align="left">PAS</td>
+</tr>
+<tr class="odd">
+<td align="left">Double Arcsine</td>
+<td align="left">PFT</td>
+</tr>
+<tr class="even">
+<td align="left">Log</td>
+<td align="left">PLN</td>
+</tr>
+<tr class="odd">
+<td align="left">Raw</td>
+<td align="left">PRAW</td>
+</tr>
+</tbody>
+</table>
+<p>Then, let’s see the result of logit transformation meta analysis.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">ismail.logit</a></code></pre></div>
+<pre><code>##                          proportion           95%-CI %W(fixed) %W(random)
+## Baiyewu, 2012                0.4528 [0.3156; 0.5955]       0.4        1.7
+## Brodaty, 2012                0.1505 [0.1131; 0.1945]       1.3        1.8
+## Chan, 2003                   0.1570 [0.0973; 0.2343]       0.5        1.7
+## Chan, 2010                   0.1391 [0.1040; 0.1806]       1.3        1.8
+## Colenda, 2010                0.2186 [0.1653; 0.2799]       1.1        1.8
+## Dlugaj, 2015                 0.1698 [0.1402; 0.2028]       2.6        1.9
+## Feng, 2009                   0.1128 [0.0645; 0.1792]       0.4        1.7
+## ?Hinton, 2003                0.4386 [0.3074; 0.5764]       0.4        1.7
+## Juarez-Cedillo, 2012         0.1526 [0.1047; 0.2118]       0.8        1.8
+## Kumar, 2006                  0.1724 [0.0585; 0.3577]       0.1        1.4
+## Lam, 2007                    0.1590 [0.1106; 0.2180]       0.8        1.8
+## Lopez-Anton, 2015            0.3498 [0.2979; 0.4046]       2.3        1.9
+## Luppa, 2012                  0.4872 [0.4065; 0.5684]       1.2        1.8
+## Lyketsos, 2002               0.2594 [0.2122; 0.3111]       1.9        1.9
+## Moretti, 2013                0.1499 [0.1343; 0.1666]       7.7        1.9
+## O&#39;Bryant, 2013               0.3476 [0.2750; 0.4257]       1.2        1.8
+## Okura, 2010                  0.2899 [0.2331; 0.3520]       1.5        1.8
+## Palmer, 2007                 0.3404 [0.2086; 0.4931]       0.3        1.6
+## ?Peters, 2012                0.1691 [0.1366; 0.2057]       2.1        1.9
+## Pink , 2015                  0.2500 [0.2043; 0.3002]       1.9        1.9
+## Potvin, 2012                 0.1111 [0.0739; 0.1586]       0.7        1.8
+## Ravaglia, 2008               0.4444 [0.3272; 0.5664]       0.6        1.7
+## Richard, 2013                0.2401 [0.2004; 0.2834]       2.4        1.9
+## Solfrizzi, 2007              0.6331 [0.5472; 0.7132]       1.0        1.8
+## Tatsch, 2006                 0.2400 [0.0936; 0.4513]       0.1        1.4
+## Van der Linde, 2010          0.1491 [0.1152; 0.1884]       1.5        1.8
+## Weyerer, 2008                0.1297 [0.1075; 0.1547]       2.9        1.9
+## Yaffe, 2011                  0.1794 [0.1377; 0.2275]       1.4        1.8
+## Chao, 2014                   0.3469 [0.2167; 0.4964]       0.3        1.7
+## Chilovi, 2009                0.4677 [0.3776; 0.5594]       1.0        1.8
+## Chiu, 2007                   0.4146 [0.2632; 0.5789]       0.3        1.6
+## Di Iulio, 2010               0.3810 [0.2959; 0.4717]       0.9        1.8
+## Edwards, 2009                0.3493 [0.3084; 0.3920]       3.7        1.9
+## Elfgren, 2010                0.3182 [0.1386; 0.5487]       0.1        1.4
+## Feldman, 2004                0.4806 [0.4397; 0.5217]       4.6        1.9
+## Fern?ndez-Mart?nez, 2010     0.3297 [0.2347; 0.4361]       0.6        1.8
+## Forrester, 2015              0.2196 [0.1808; 0.2623]       2.2        1.9
+## Gabryelewicz, 2004           0.4706 [0.3710; 0.5720]       0.8        1.8
+## Gallagher, 2011              0.2422 [0.1783; 0.3159]       0.9        1.8
+## Gallassi, 2008               0.7959 [0.6566; 0.8976]       0.2        1.6
+## Hudon, 2008                  0.3864 [0.2436; 0.5450]       0.3        1.6
+## Kim, 2015                    0.5102 [0.4690; 0.5512]       4.6        1.9
+## Kosteniuk, 2014              0.5098 [0.3660; 0.6525]       0.4        1.7
+## Lach, 2010                   0.5965 [0.4582; 0.7244]       0.4        1.7
+## Lee, 2008                    0.1990 [0.1601; 0.2426]       1.9        1.9
+## Lehrner, 2014                0.4791 [0.4107; 0.5481]       1.7        1.8
+## Li, 2001                     0.3333 [0.1459; 0.5697]       0.1        1.4
+## Lopez, 2005                  0.6009 [0.5341; 0.6650]       1.7        1.8
+## Modrego, 2004                0.3684 [0.2800; 0.4639]       0.8        1.8
+## Muangpaisan, 2008            0.4545 [0.3406; 0.5721]       0.6        1.8
+## Palmer, 2010                 0.5038 [0.4152; 0.5923]       1.0        1.8
+## Rozzini, 2008                0.4133 [0.3336; 0.4965]       1.1        1.8
+## Serra, 2010                  0.5263 [0.2886; 0.7555]       0.1        1.4
+## Snowden, 2014                0.1399 [0.1319; 0.1482]      26.7        1.9
+## Van der Mussele, 2014        0.2295 [0.1707; 0.2973]       1.0        1.8
+## Vaughn, 2009                 0.4250 [0.3151; 0.5406]       0.6        1.8
+## Zhang, 2012                  0.2632 [0.1340; 0.4310]       0.2        1.6
+## 
+## Number of studies combined: k = 57
+## 
+##                      proportion           95%-CI  z p-value
+## Fixed effect model       0.2411 [0.2348; 0.2475] --      --
+## Random effects model     0.3098 [0.2670; 0.3561] --      --
+## 
+## Quantifying heterogeneity:
+## tau^2 = 0.5956; H = 5.65 [5.28; 6.05]; I^2 = 96.9% [96.4%; 97.3%]
+## 
+## Test of heterogeneity:
+##        Q d.f. p-value
+##  1788.55   56       0
+## 
+## Details on meta-analytical method:
+## - Inverse variance method
+## - DerSimonian-Laird estimator for tau^2
+## - Logit transformation
+## - Clopper-Pearson confidence interval for individual studies</code></pre>
+</div>
+<div id="b.-forest-plot-3" class="section level4 unnumbered">
+<h4>1.2b. Forest plot</h4>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="kw">forest</span>(ismail.logit)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-14-1.png" width="1152" /></p>
+<p>Again, if the forest plot cannot be seen fully, we can save this plot as pdf file.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">pdf</span>(<span class="st">&quot;~/Desktop/meta/Lab_day2/ismail_logit.pdf&quot;</span>,<span class="dt">height=</span><span class="dv">15</span>,<span class="dt">width=</span><span class="dv">12</span>)</a>
+<a class="sourceLine" id="cb18-2" data-line-number="2"><span class="kw">forest</span>(ismail.logit)</a>
+<a class="sourceLine" id="cb18-3" data-line-number="3"><span class="kw">dev.off</span>()</a></code></pre></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+</div>
+</div>
+<div id="method-3---freeman-tukey-double-arcsine-transformation" class="section level3 unnumbered">
+<h3>1.3 Method 3 - Freeman-Tukey Double Arcsine Transformation</h3>
+<div id="a.-use-metaprop-to-carry-out-the-meta-analysis-1" class="section level4 unnumbered">
+<h4>1.3a. Use metaprop to carry out the meta-analysis</h4>
+<p>Similar to Logit Transforamtion, the Double Arcsine Transformation is conducted by using <code>metaprop</code> command in <code>meta</code> package. The only difference is that Double Arcsine Transformation uses <code>sm=&quot;PFT&quot;</code> instead of <code>sm=&quot;PLOGIT&quot;</code>.<br />
+Now type :</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">ismail.ft &lt;-<span class="st"> </span><span class="kw">metaprop</span>(<span class="dt">event =</span> events, <span class="dt">n =</span> numberofparticipants, <span class="dt">studlab =</span> AuthorYear, <span class="dt">data =</span> ismail, <span class="dt">method =</span> <span class="st">&quot;Inverse&quot;</span>, <span class="dt">sm =</span> <span class="st">&quot;PFT&quot;</span>)</a>
+<a class="sourceLine" id="cb20-2" data-line-number="2">ismail.ft</a></code></pre></div>
+<pre><code>##                          proportion           95%-CI %W(fixed) %W(random)
+## Baiyewu, 2012                0.4528 [0.3156; 0.5955]       0.3        1.6
+## Brodaty, 2012                0.1505 [0.1131; 0.1945]       1.6        1.9
+## Chan, 2003                   0.1570 [0.0973; 0.2343]       0.6        1.8
+## Chan, 2010                   0.1391 [0.1040; 0.1806]       1.7        1.9
+## Colenda, 2010                0.2186 [0.1653; 0.2799]       1.1        1.8
+## Dlugaj, 2015                 0.1698 [0.1402; 0.2028]       2.9        1.9
+## Feng, 2009                   0.1128 [0.0645; 0.1792]       0.7        1.8
+## ?Hinton, 2003                0.4386 [0.3074; 0.5764]       0.3        1.6
+## Juarez-Cedillo, 2012         0.1526 [0.1047; 0.2118]       0.9        1.8
+## Kumar, 2006                  0.1724 [0.0585; 0.3577]       0.1        1.4
+## Lam, 2007                    0.1590 [0.1106; 0.2180]       1.0        1.8
+## Lopez-Anton, 2015            0.3498 [0.2979; 0.4046]       1.6        1.9
+## Luppa, 2012                  0.4872 [0.4065; 0.5684]       0.8        1.8
+## Lyketsos, 2002               0.2594 [0.2122; 0.3111]       1.6        1.9
+## Moretti, 2013                0.1499 [0.1343; 0.1666]       9.5        1.9
+## O&#39;Bryant, 2013               0.3476 [0.2750; 0.4257]       0.8        1.8
+## Okura, 2010                  0.2899 [0.2331; 0.3520]       1.2        1.9
+## Palmer, 2007                 0.3404 [0.2086; 0.4931]       0.2        1.6
+## ?Peters, 2012                0.1691 [0.1366; 0.2057]       2.3        1.9
+## Pink , 2015                  0.2500 [0.2043; 0.3002]       1.6        1.9
+## Potvin, 2012                 0.1111 [0.0739; 0.1586]       1.1        1.9
+## Ravaglia, 2008               0.4444 [0.3272; 0.5664]       0.4        1.7
+## Richard, 2013                0.2401 [0.2004; 0.2834]       2.1        1.9
+## Solfrizzi, 2007              0.6331 [0.5472; 0.7132]       0.7        1.8
+## Tatsch, 2006                 0.2400 [0.0936; 0.4513]       0.1        1.4
+## Van der Linde, 2010          0.1491 [0.1152; 0.1884]       1.9        1.9
+## Weyerer, 2008                0.1297 [0.1075; 0.1547]       4.0        1.9
+## Yaffe, 2011                  0.1794 [0.1377; 0.2275]       1.5        1.9
+## Chao, 2014                   0.3469 [0.2167; 0.4964]       0.2        1.6
+## Chilovi, 2009                0.4677 [0.3776; 0.5594]       0.6        1.8
+## Chiu, 2007                   0.4146 [0.2632; 0.5789]       0.2        1.6
+## Di Iulio, 2010               0.3810 [0.2959; 0.4717]       0.6        1.8
+## Edwards, 2009                0.3493 [0.3084; 0.3920]       2.6        1.9
+## Elfgren, 2010                0.3182 [0.1386; 0.5487]       0.1        1.3
+## Feldman, 2004                0.4806 [0.4397; 0.5217]       2.9        1.9
+## Fern?ndez-Mart?nez, 2010     0.3297 [0.2347; 0.4361]       0.4        1.7
+## Forrester, 2015              0.2196 [0.1808; 0.2623]       2.1        1.9
+## Gabryelewicz, 2004           0.4706 [0.3710; 0.5720]       0.5        1.8
+## Gallagher, 2011              0.2422 [0.1783; 0.3159]       0.8        1.8
+## Gallassi, 2008               0.7959 [0.6566; 0.8976]       0.2        1.6
+## Hudon, 2008                  0.3864 [0.2436; 0.5450]       0.2        1.6
+## Kim, 2015                    0.5102 [0.4690; 0.5512]       2.9        1.9
+## Kosteniuk, 2014              0.5098 [0.3660; 0.6525]       0.3        1.6
+## Lach, 2010                   0.5965 [0.4582; 0.7244]       0.3        1.6
+## Lee, 2008                    0.1990 [0.1601; 0.2426]       1.9        1.9
+## Lehrner, 2014                0.4791 [0.4107; 0.5481]       1.1        1.8
+## Li, 2001                     0.3333 [0.1459; 0.5697]       0.1        1.3
+## Lopez, 2005                  0.6009 [0.5341; 0.6650]       1.1        1.9
+## Modrego, 2004                0.3684 [0.2800; 0.4639]       0.6        1.8
+## Muangpaisan, 2008            0.4545 [0.3406; 0.5721]       0.4        1.7
+## Palmer, 2010                 0.5038 [0.4152; 0.5923]       0.6        1.8
+## Rozzini, 2008                0.4133 [0.3336; 0.4965]       0.7        1.8
+## Serra, 2010                  0.5263 [0.2886; 0.7555]       0.1        1.3
+## Snowden, 2014                0.1399 [0.1319; 0.1482]      34.7        1.9
+## Van der Mussele, 2014        0.2295 [0.1707; 0.2973]       0.9        1.8
+## Vaughn, 2009                 0.4250 [0.3151; 0.5406]       0.4        1.7
+## Zhang, 2012                  0.2632 [0.1340; 0.4310]       0.2        1.5
+## 
+## Number of studies combined: k = 57
+## 
+##                      proportion           95%-CI  z p-value
+## Fixed effect model       0.2124 [0.2067; 0.2181] --      --
+## Random effects model     0.3165 [0.2768; 0.3576] --      --
+## 
+## Quantifying heterogeneity:
+## tau^2 = 0.0248; H = 5.67 [5.30; 6.08]; I^2 = 96.9% [96.4%; 97.3%]
+## 
+## Test of heterogeneity:
+##        Q d.f. p-value
+##  1802.03   56       0
+## 
+## Details on meta-analytical method:
+## - Inverse variance method
+## - DerSimonian-Laird estimator for tau^2
+## - Freeman-Tukey double arcsine transformation
+## - Clopper-Pearson confidence interval for individual studies</code></pre>
+</div>
+<div id="b.-forest-plot-4" class="section level4 unnumbered">
+<h4>1.3b. Forest plot</h4>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="kw">forest</span>(ismail.ft)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-17-1.png" width="1152" /></p>
+<p>Again, if the forest plot cannot be seen fully, we can save this plot as pdf file.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="kw">pdf</span>(<span class="st">&quot;~/Desktop/meta/Lab_day2/ismail_FT.pdf&quot;</span>,<span class="dt">height=</span><span class="dv">15</span>,<span class="dt">width=</span><span class="dv">12</span>)</a>
+<a class="sourceLine" id="cb23-2" data-line-number="2"><span class="kw">forest</span>(ismail.ft)</a>
+<a class="sourceLine" id="cb23-3" data-line-number="3"><span class="kw">dev.off</span>()</a></code></pre></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+</div>
+</div>
+<div id="method-4---glmm-method-for-prevalence-data" class="section level3 unnumbered">
+<h3>1.4 Method 4 - GLMM Method for prevalence data</h3>
+<div id="a.-use-lme4-to-carry-out-the-meta-analysis" class="section level4 unnumbered">
+<h4>1.4a. Use <code>lme4</code> to carry out the meta-analysis</h4>
+<p>The first method of GLMM method for prevalence meta analysis is to use the <code>lme4</code> package.<br />
+However, this package is not sepcially designed for meta analysis, so some results and some plots cannot be obtained by it.<br />
+But this package is more flexible for any kind of data.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1">ismail.glm &lt;-<span class="st"> </span><span class="kw">glmer</span>(events<span class="op">/</span>numberofparticipants <span class="op">~</span><span class="st">  </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>AuthorYear), <span class="dt">data =</span> ismail, binomial, <span class="dt">weights=</span>numberofparticipants, <span class="dt">nAGQ =</span> <span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb25-2" data-line-number="2">ismail.glm</a></code></pre></div>
+<pre><code>## Generalized linear mixed model fit by maximum likelihood (Adaptive
+##   Gauss-Hermite Quadrature, nAGQ = 10) [glmerMod]
+##  Family: binomial  ( logit )
+## Formula: events/numberofparticipants ~ (1 | AuthorYear)
+##    Data: ismail
+## Weights: numberofparticipants
+##      AIC      BIC   logLik deviance df.resid 
+##      222      226     -109      218       55 
+## Random effects:
+##  Groups     Name        Std.Dev.
+##  AuthorYear (Intercept) 0.73    
+## Number of obs: 57, groups:  AuthorYear, 57
+## Fixed Effects:
+## (Intercept)  
+##      -0.809</code></pre>
+<p>It is exactly a Random Intercept Logistic Regression Model.</p>
+<ol style="list-style-type: decimal">
+<li>nAGQ is integer scalar, which means the number of points per axis for evaluating the adaptive Gauss-Hermite approximation to the log-likelihood. Different nAGQ may give different model performance.<br />
+</li>
+<li>weights is an optional vector of ‘prior weights’ to be used in the fitting process.<br />
+</li>
+<li>You can see the details by typing <code>help(&quot;glmer&quot;)</code>.</li>
+</ol>
+<p>To see the summary of the model, please type</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="kw">summary</span>(ismail.glm)</a></code></pre></div>
+<pre><code>## Generalized linear mixed model fit by maximum likelihood (Adaptive
+##   Gauss-Hermite Quadrature, nAGQ = 10) [glmerMod]
+##  Family: binomial  ( logit )
+## Formula: events/numberofparticipants ~ (1 | AuthorYear)
+##    Data: ismail
+## Weights: numberofparticipants
+## 
+##      AIC      BIC   logLik deviance df.resid 
+##      222      226     -109      218       55 
+## 
+## Scaled residuals: 
+##    Min     1Q Median     3Q    Max 
+## -0.538 -0.136  0.038  0.217  1.078 
+## 
+## Random effects:
+##  Groups     Name        Variance Std.Dev.
+##  AuthorYear (Intercept) 0.533    0.73    
+## Number of obs: 57, groups:  AuthorYear, 57
+## 
+## Fixed effects:
+##             Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept)   -0.809      0.101   -7.99  1.3e-15 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>You can see that the standard deviation of random effets Std.Dev = 0.73, which is exactly the square root of estimated tau^2. So you can type the command <code>tau_square = 0.73^2</code> to obtain the estimated tau^2.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1">tau_square =<span class="st"> </span><span class="fl">0.73</span><span class="op">^</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb29-2" data-line-number="2">tau_square</a></code></pre></div>
+<pre><code>## [1] 0.533</code></pre>
+<p>Then, the random intercept is -0.809, which can be transformed to pooled prevalence by <span class="math inline">\(p=exp(b0)/(1+exp(b0))\)</span>.<br />
+Now type :</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1">pool_p =<span class="st"> </span><span class="kw">exp</span>(<span class="op">-</span><span class="fl">0.809</span>)<span class="op">/</span>(<span class="dv">1</span><span class="op">+</span><span class="kw">exp</span>(<span class="op">-</span><span class="fl">0.809</span>))</a>
+<a class="sourceLine" id="cb31-2" data-line-number="2">pool_p</a></code></pre></div>
+<pre><code>## [1] 0.308</code></pre>
+<p>You can see that the pooled prevalence of GLMM method is 0.308.</p>
+</div>
+<div id="b.-use-metaprop-to-carry-out-the-meta-analysis" class="section level4 unnumbered">
+<h4>1.4b. Use <code>metaprop</code> to carry out the meta-analysis</h4>
+<p>Similar to Transformation methods above, the GLMM method can be also conducted by using <code>metaprop</code> command in <code>meta</code> package. The only difference is that GLMM uses <code>method =&quot;GLMM&quot;</code> instead of <code>method =&quot;Inverse&quot;</code>.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1">ismail.glmm &lt;-<span class="st"> </span><span class="kw">metaprop</span>(<span class="dt">event =</span> events, <span class="dt">n =</span> numberofparticipants, <span class="dt">studlab =</span> AuthorYear, <span class="dt">data =</span> ismail, <span class="dt">method =</span> <span class="st">&quot;GLMM&quot;</span>)</a>
+<a class="sourceLine" id="cb33-2" data-line-number="2">ismail.glmm</a></code></pre></div>
+<pre><code>##                          proportion           95%-CI %W(fixed) %W(random)
+## Baiyewu, 2012                0.4528 [0.3156; 0.5955]        --         --
+## Brodaty, 2012                0.1505 [0.1131; 0.1945]        --         --
+## Chan, 2003                   0.1570 [0.0973; 0.2343]        --         --
+## Chan, 2010                   0.1391 [0.1040; 0.1806]        --         --
+## Colenda, 2010                0.2186 [0.1653; 0.2799]        --         --
+## Dlugaj, 2015                 0.1698 [0.1402; 0.2028]        --         --
+## Feng, 2009                   0.1128 [0.0645; 0.1792]        --         --
+## ?Hinton, 2003                0.4386 [0.3074; 0.5764]        --         --
+## Juarez-Cedillo, 2012         0.1526 [0.1047; 0.2118]        --         --
+## Kumar, 2006                  0.1724 [0.0585; 0.3577]        --         --
+## Lam, 2007                    0.1590 [0.1106; 0.2180]        --         --
+## Lopez-Anton, 2015            0.3498 [0.2979; 0.4046]        --         --
+## Luppa, 2012                  0.4872 [0.4065; 0.5684]        --         --
+## Lyketsos, 2002               0.2594 [0.2122; 0.3111]        --         --
+## Moretti, 2013                0.1499 [0.1343; 0.1666]        --         --
+## O&#39;Bryant, 2013               0.3476 [0.2750; 0.4257]        --         --
+## Okura, 2010                  0.2899 [0.2331; 0.3520]        --         --
+## Palmer, 2007                 0.3404 [0.2086; 0.4931]        --         --
+## ?Peters, 2012                0.1691 [0.1366; 0.2057]        --         --
+## Pink , 2015                  0.2500 [0.2043; 0.3002]        --         --
+## Potvin, 2012                 0.1111 [0.0739; 0.1586]        --         --
+## Ravaglia, 2008               0.4444 [0.3272; 0.5664]        --         --
+## Richard, 2013                0.2401 [0.2004; 0.2834]        --         --
+## Solfrizzi, 2007              0.6331 [0.5472; 0.7132]        --         --
+## Tatsch, 2006                 0.2400 [0.0936; 0.4513]        --         --
+## Van der Linde, 2010          0.1491 [0.1152; 0.1884]        --         --
+## Weyerer, 2008                0.1297 [0.1075; 0.1547]        --         --
+## Yaffe, 2011                  0.1794 [0.1377; 0.2275]        --         --
+## Chao, 2014                   0.3469 [0.2167; 0.4964]        --         --
+## Chilovi, 2009                0.4677 [0.3776; 0.5594]        --         --
+## Chiu, 2007                   0.4146 [0.2632; 0.5789]        --         --
+## Di Iulio, 2010               0.3810 [0.2959; 0.4717]        --         --
+## Edwards, 2009                0.3493 [0.3084; 0.3920]        --         --
+## Elfgren, 2010                0.3182 [0.1386; 0.5487]        --         --
+## Feldman, 2004                0.4806 [0.4397; 0.5217]        --         --
+## Fern?ndez-Mart?nez, 2010     0.3297 [0.2347; 0.4361]        --         --
+## Forrester, 2015              0.2196 [0.1808; 0.2623]        --         --
+## Gabryelewicz, 2004           0.4706 [0.3710; 0.5720]        --         --
+## Gallagher, 2011              0.2422 [0.1783; 0.3159]        --         --
+## Gallassi, 2008               0.7959 [0.6566; 0.8976]        --         --
+## Hudon, 2008                  0.3864 [0.2436; 0.5450]        --         --
+## Kim, 2015                    0.5102 [0.4690; 0.5512]        --         --
+## Kosteniuk, 2014              0.5098 [0.3660; 0.6525]        --         --
+## Lach, 2010                   0.5965 [0.4582; 0.7244]        --         --
+## Lee, 2008                    0.1990 [0.1601; 0.2426]        --         --
+## Lehrner, 2014                0.4791 [0.4107; 0.5481]        --         --
+## Li, 2001                     0.3333 [0.1459; 0.5697]        --         --
+## Lopez, 2005                  0.6009 [0.5341; 0.6650]        --         --
+## Modrego, 2004                0.3684 [0.2800; 0.4639]        --         --
+## Muangpaisan, 2008            0.4545 [0.3406; 0.5721]        --         --
+## Palmer, 2010                 0.5038 [0.4152; 0.5923]        --         --
+## Rozzini, 2008                0.4133 [0.3336; 0.4965]        --         --
+## Serra, 2010                  0.5263 [0.2886; 0.7555]        --         --
+## Snowden, 2014                0.1399 [0.1319; 0.1482]        --         --
+## Van der Mussele, 2014        0.2295 [0.1707; 0.2973]        --         --
+## Vaughn, 2009                 0.4250 [0.3151; 0.5406]        --         --
+## Zhang, 2012                  0.2632 [0.1340; 0.4310]        --         --
+## 
+## Number of studies combined: k = 57
+## 
+##                      proportion           95%-CI  z p-value
+## Fixed effect model       0.2248 [0.2191; 0.2305] --      --
+## Random effects model     0.3081 [0.2675; 0.3519] --      --
+## 
+## Quantifying heterogeneity:
+## tau^2 = 0.5327; H = 5.35; I^2 = 96.5%
+## 
+## Test of heterogeneity:
+##        Q d.f. p-value             Test
+##  1788.55   56       0        Wald-type
+##  1844.15   56       0 Likelihood-Ratio
+## 
+## Details on meta-analytical method:
+## - Random intercept logistic regression model
+## - Maximum-likelihood estimator for tau^2
+## - Logit transformation
+## - Clopper-Pearson confidence interval for individual studies</code></pre>
+<p>As you can see, the tau^2 is 0.5327 and the pooled prevalence is 0.3081, and each is the same as the result we calculated from the GLMM result of <code>lme4</code>, respectively.</p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="prevalence-and-survival-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exercise-2-nibali-incidence-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/04-Prevalence_and_Survival_data.rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

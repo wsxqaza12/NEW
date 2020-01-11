@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Exercise 2 - Tseng | [NTU 108] Meta analysis</title>
-  <meta name="description" content="Exercise 2 - Tseng | [NTU 108] Meta analysis" />
+  <title>Chapter 5 Prevalence and Survival data | [NTU 108] Meta analysis</title>
+  <meta name="description" content="Chapter 5 Prevalence and Survival data | [NTU 108] Meta analysis" />
   <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Exercise 2 - Tseng | [NTU 108] Meta analysis" />
+  <meta property="og:title" content="Chapter 5 Prevalence and Survival data | [NTU 108] Meta analysis" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="wsxqaza12/NTU-108-Meta-Analysis" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Exercise 2 - Tseng | [NTU 108] Meta analysis" />
+  <meta name="twitter:title" content="Chapter 5 Prevalence and Survival data | [NTU 108] Meta analysis" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="exercise-1-nishiumra.html"/>
-<link rel="next" href="exercise-3-cbcl.html"/>
+<link rel="prev" href="prevalence-and-survival-data.html"/>
+<link rel="next" href="exercise-1-ismail-prevalence-data.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -189,7 +189,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="exercise-3-cbcl.html"><a href="exercise-3-cbcl.html#d.-sroc-2"><i class="fa fa-check"></i>3d. SROC</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="prevalence-and-survival-data.html"><a href="prevalence-and-survival-data.html"><i class="fa fa-check"></i><b>4</b> Prevalence and Survival data</a><ul>
+<li class="chapter" data-level="4" data-path="prevalence-and-survival-data.html"><a href="prevalence-and-survival-data.html"><i class="fa fa-check"></i><b>4</b> Prevalence and Survival data</a></li>
+<li class="chapter" data-level="5" data-path="prevalence-and-survival-data-1.html"><a href="prevalence-and-survival-data-1.html"><i class="fa fa-check"></i><b>5</b> Prevalence and Survival data</a><ul>
 <li class="chapter" data-level="" data-path="exercise-1-ismail-prevalence-data.html"><a href="exercise-1-ismail-prevalence-data.html"><i class="fa fa-check"></i>Exercise 1 - ismail (Prevalence data)</a><ul>
 <li class="chapter" data-level="" data-path="exercise-1-ismail-prevalence-data.html"><a href="exercise-1-ismail-prevalence-data.html#method-1---binomial-distribution"><i class="fa fa-check"></i>1.1 Method 1 - Binomial distribution</a></li>
 <li class="chapter" data-level="" data-path="exercise-1-ismail-prevalence-data.html"><a href="exercise-1-ismail-prevalence-data.html#method-2---logit-transformation"><i class="fa fa-check"></i>1.2 Method 2 - Logit Transformation</a></li>
@@ -225,209 +226,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="exercise-2---tseng" class="section level2 unnumbered">
-<h2>Exercise 2 - Tseng</h2>
-<p>As with Exercise 1, we need to read in the csv file first. Table <a href="exercise-2-tseng.html#tab:Tseng-data">3.2</a> is the first 5 rows of Tseng data.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="co"># Read data</span></a>
-<a class="sourceLine" id="cb9-2" data-line-number="2">tseng &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;~/Desktop/meta/Diagnostic Test/Tseng.csv&quot;</span>)</a>
-<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="kw">print</span>(tseng)</a></code></pre></div>
-<table>
-<caption><span id="tab:Tseng-data">Table 3.2: </span>A table of Tseng data.</caption>
-<thead>
-<tr class="header">
-<th align="left">id</th>
-<th align="right">TP</th>
-<th align="right">FP</th>
-<th align="right">FN</th>
-<th align="right">TN</th>
-<th align="left">country</th>
-<th align="right">male</th>
-<th align="right">smoker</th>
-<th align="right">sens</th>
-<th align="right">spec</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Toyoda et al, 2008</td>
-<td align="right">40</td>
-<td align="right">528</td>
-<td align="right">5</td>
-<td align="right">6610</td>
-<td align="left">Japan</td>
-<td align="right">59</td>
-<td align="right">78</td>
-<td align="right">88.9</td>
-<td align="right">92.6</td>
-</tr>
-<tr class="even">
-<td align="left">Veronesi et al, 2008</td>
-<td align="right">55</td>
-<td align="right">7</td>
-<td align="right">20</td>
-<td align="right">5119</td>
-<td align="left">Italy</td>
-<td align="right">66</td>
-<td align="right">80</td>
-<td align="right">73.3</td>
-<td align="right">99.9</td>
-</tr>
-<tr class="odd">
-<td align="left">Menezes et al, 2009</td>
-<td align="right">50</td>
-<td align="right">17</td>
-<td align="right">7</td>
-<td align="right">2592</td>
-<td align="left">Canada</td>
-<td align="right">54</td>
-<td align="right">87</td>
-<td align="right">87.7</td>
-<td align="right">99.3</td>
-</tr>
-<tr class="even">
-<td align="left">van Klaveren et al, 2009</td>
-<td align="right">70</td>
-<td align="right">1500</td>
-<td align="right">30</td>
-<td align="right">5957</td>
-<td align="left">Dutch</td>
-<td align="right">84</td>
-<td align="right">100</td>
-<td align="right">70.0</td>
-<td align="right">79.9</td>
-</tr>
-<tr class="odd">
-<td align="left">Aberle et al, 2011</td>
-<td align="right">270</td>
-<td align="right">6921</td>
-<td align="right">6</td>
-<td align="right">19112</td>
-<td align="left">American</td>
-<td align="right">59</td>
-<td align="right">100</td>
-<td align="right">97.8</td>
-<td align="right">73.4</td>
-</tr>
-</tbody>
-</table>
-<div id="a.-univariate-analysis-1" class="section level3 unnumbered">
-<h3>2a. Univariate Analysis</h3>
-<p>Use the <code>madad</code> command to conduct a meta analysis by using univariate model, and save the results in the object “madad.tseng”</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="co">## Univariate Analysis ##</span></a>
-<a class="sourceLine" id="cb10-2" data-line-number="2">madad.tseng &lt;-<span class="st"> </span><span class="kw">madad</span>(tseng)</a>
-<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="kw">print</span>(madad.tseng)</a></code></pre></div>
-<pre><code>## Descriptive summary of tseng with 5 primary studies.
-## Confidence level for all calculations set to 95 %
-## Using a continuity correction of 0.5 if applicable 
-## 
-## Diagnostic accuracies 
-##       sens  2.5% 97.5%  spec  2.5% 97.5%
-## [1,] 0.889 0.765 0.952 0.926 0.920 0.932
-## [2,] 0.733 0.624 0.820 0.999 0.997 0.999
-## [3,] 0.877 0.768 0.939 0.993 0.990 0.996
-## [4,] 0.700 0.604 0.781 0.799 0.790 0.808
-## [5,] 0.978 0.953 0.990 0.734 0.729 0.739
-## 
-## Test for equality of sensitivities: 
-## X-squared = 69.7, df = 4, p-value = 2.62e-14
-## Test for equality of specificities: 
-## X-squared = 3415, df = 4, p-value = &lt;2e-16
-## 
-## 
-## Diagnostic OR and likelihood ratios 
-##          DOR   2.5%  97.5%  posLR   2.5%   97.5% negLR  2.5% 97.5%
-## [1,]  100.15  39.36  254.8  12.02  10.53   13.71 0.120 0.053 0.274
-## [2,] 2011.04 816.97 4950.3 537.01 252.97 1140.00 0.267 0.183 0.389
-## [3,] 1089.08 432.45 2742.7 134.62  83.00  218.36 0.124 0.062 0.247
-## [4,]    9.27   6.02   14.3   3.48   3.04    3.99 0.376 0.278 0.507
-## [5,]  124.27  55.31  279.2   3.68   3.58    3.78 0.030 0.013 0.065
-## 
-## Correlation of sensitivities and false positive rates: 
-##    rho  2.5 % 97.5 % 
-##  0.268 -0.804  0.930</code></pre>
-</div>
-<div id="b.-forest-plot-1" class="section level3 unnumbered">
-<h3>2b. Forest plot</h3>
-<p>Then use the <code>forest</code> command to draw the forest plot. The <code>split.screen</code> function is used to split a plotting window into different rectangular sections called “screens”. Figure <a href="exercise-2-tseng.html#fig:tseng-UM-FP">3.3</a> is the forest plot of Tseng data.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw">split.screen</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="kw">screen</span>(<span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="kw">forest</span>(madad.tseng, <span class="dt">type =</span> <span class="st">&quot;sens&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Sensitivity&quot;</span>, <span class="dt">cex =</span> <span class="fl">.8</span>, <span class="dt">snames =</span> tseng<span class="op">$</span>study_id)</a>
-<a class="sourceLine" id="cb12-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="kw">screen</span>(<span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb12-6" data-line-number="6"><span class="kw">forest</span>(madad.tseng, <span class="dt">type =</span> <span class="st">&quot;spec&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Specificity&quot;</span>, <span class="dt">cex =</span> <span class="fl">.8</span>, <span class="dt">snames =</span> tseng<span class="op">$</span>study_id)</a>
-<a class="sourceLine" id="cb12-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb12-8" data-line-number="8"><span class="kw">close.screen</span>(<span class="dt">all.screens =</span> T)</a></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:tseng-UM-FP"></span>
-<img src="images/tseng-UM-FP.png" alt="The forest plot of Tseng data." width="500" />
-<p class="caption">
-Figure 3.3: The forest plot of Tseng data.
-</p>
-</div>
-</div>
-<div id="c.-bivariate-analysis-1" class="section level3 unnumbered">
-<h3>2c. Bivariate Analysis</h3>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="co">## Bivariate Analysis ##</span></a>
-<a class="sourceLine" id="cb13-2" data-line-number="2">bi.tseng &lt;-<span class="st"> </span><span class="kw">reitsma</span>(tseng)</a>
-<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="kw">summary</span>(bi.tseng)</a></code></pre></div>
-<pre><code>## Call:  reitsma.default(data = tseng)
-## 
-## Bivariate diagnostic random-effects meta-analysis
-## Estimation method: REML
-## 
-## Fixed-effects coefficients
-##                   Estimate Std. Error      z Pr(&gt;|z|) 95%ci.lb 95%ci.ub
-## tsens.(Intercept)    1.905      0.532  3.578    0.000    0.862    2.949
-## tfpr.(Intercept)    -3.289      1.075 -3.061    0.002   -5.396   -1.183
-## sensitivity          0.870          -      -        -    0.703    0.950
-## false pos. rate      0.036          -      -        -    0.005    0.234
-##                      
-## tsens.(Intercept) ***
-## tfpr.(Intercept)   **
-## sensitivity          
-## false pos. rate      
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1 
-## 
-## Variance components: between-studies Std. Dev and correlation matrix
-##       Std. Dev tsens  tfpr
-## tsens    1.134 1.000     .
-## tfpr     2.395 0.455 1.000
-## 
-##  logLik     AIC     BIC 
-##  12.656 -15.312 -13.799 
-## 
-## AUC:  0.951
-## Partial AUC (restricted to observed FPRs and normalized):  0.909
-## 
-## HSROC parameters 
-##       Theta      Lambda        beta sigma2theta sigma2alpha 
-##       0.252       5.032       0.747       1.977       2.958</code></pre>
-</div>
-<div id="d.-sroc-1" class="section level3 unnumbered">
-<h3>2d. SROC</h3>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="co">## SROC ##</span></a>
-<a class="sourceLine" id="cb15-2" data-line-number="2"><span class="kw">plot</span>(bi.tseng, <span class="dt">sroclwd =</span> <span class="dv">2</span>, <span class="dt">main =</span> <span class="st">&quot;SROC curve (bivariate model) for tseng data&quot;</span>, <span class="dt">pch =</span> <span class="dv">16</span>)</a>
-<a class="sourceLine" id="cb15-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb15-4" data-line-number="4"><span class="kw">points</span>(<span class="kw">fpr</span>(tseng), <span class="kw">sens</span>(tseng), <span class="dt">pch =</span> <span class="dv">1</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</a>
-<a class="sourceLine" id="cb15-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb15-6" data-line-number="6"><span class="kw">legend</span>(<span class="st">&quot;bottomright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;summary estimate&quot;</span>), <span class="dt">pch =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">16</span>), <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;black&quot;</span>))</a>
-<a class="sourceLine" id="cb15-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb15-8" data-line-number="8"><span class="kw">legend</span>(<span class="st">&quot;bottomleft&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;SROC&quot;</span>, <span class="st">&quot;conf. region&quot;</span>), <span class="dt">lwd =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>))</a></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:tseng-SROC"></span>
-<img src="bookdown-demo_files/figure-html/tseng-SROC-1.png" alt="The SROC of Tseng data." width="672" />
-<p class="caption">
-Figure 3.4: The SROC of Tseng data.
-</p>
-</div>
-</div>
+<div id="prevalence-and-survival-data-1" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Prevalence and Survival data</h1>
+<p>In this chapter, we will use <code>meta</code> and <code>lme4</code> package to analyze the data, so first we need to use <code>library</code> command to load the add on the package. You can view all the methods for meta analysis of prevalence data of meta package by typing <code>help(meta)</code>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(meta)</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">library</span>(lme4)</a></code></pre></div>
+<p><img src="images/LAB4.png" width="70%" style="display: block; margin: auto;" /></p> 
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="exercise-1-nishiumra.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="exercise-3-cbcl.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="prevalence-and-survival-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exercise-1-ismail-prevalence-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -458,7 +270,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-Diagnostic_Test.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/04-Prevalence_and_Survival_data.rmd",
 "text": "Edit"
 },
 "history": {
@@ -477,6 +289,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
