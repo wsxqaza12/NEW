@@ -24,7 +24,7 @@
 <meta name="author" content="林先和 杜裕康 張齡尹" />
 
 
-<meta name="date" content="2020-01-11" />
+<meta name="date" content="2020-01-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -134,11 +134,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">[NTU 108] Meta analysis</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Description</a></li>
-<li class="chapter" data-level="1" data-path="strart-r.html"><a href="strart-r.html"><i class="fa fa-check"></i><b>1</b> Strart R</a><ul>
+<li class="chapter" data-level="" data-path="index1.html"><a href="index1.html"><i class="fa fa-check"></i>Description</a></li>
+<li class="chapter" data-level="1" data-path="start-r.html"><a href="start-r.html"><i class="fa fa-check"></i><b>1</b> Start R</a><ul>
 <li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1.1</b> Introduction</a><ul>
 <li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#installing-r-rstudio"><i class="fa fa-check"></i>Installing R &amp; RStudio</a></li>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#start-r"><i class="fa fa-check"></i>Start R!</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#start-r-1"><i class="fa fa-check"></i>Start R!</a></li>
 <li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#open-script"><i class="fa fa-check"></i>Open script</a></li>
 <li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#install-packages"><i class="fa fa-check"></i>Install packages</a></li>
 <li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#getting-help"><i class="fa fa-check"></i>Getting help</a></li>
@@ -230,34 +230,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2>Example 3 - Passive smoking</h2>
 <p><strong>Association between passive smoking and lung cancer in women (Hackshaw et al, BMJ 1997)</strong></p>
 <p>Read in the data:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1">ps &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;~/Desktop/meta/Lab_day1/passivesmoking.csv&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1">ps &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;~/Desktop/meta/Lab_day1/passivesmoking.csv&quot;</span>)</a></code></pre></div>
 <p>Then type:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1">ps.iv &lt;-<span class="st"> </span><span class="kw">metagen</span>(logOR, selogOR, <span class="dt">sm=</span><span class="st">&quot;OR&quot;</span>, <span class="dt">data=</span>ps)</a></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1">ps.iv &lt;-<span class="st"> </span><span class="kw">metagen</span>(logOR, selogOR, <span class="dt">sm=</span><span class="st">&quot;OR&quot;</span>, <span class="dt">data=</span>ps)</a></code></pre></div>
 <div id="a.-funnel-plot-using-the-original-odds-ratio" class="section level3 unnumbered">
 <h3>3a. Funnel plot using the original odds ratio</h3>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="kw">funnel</span>(ps.iv, <span class="dt">comb.random =</span> F)</a></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="kw">funnel</span>(ps.iv, <span class="dt">comb.random =</span> F)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-32-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="b.-contour-enhanced-funnel-plot" class="section level3 unnumbered">
 <h3>3b. Contour-enhanced funnel plot</h3>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="kw">funnel</span>(ps.iv, <span class="dt">comb.random =</span> F, <span class="dt">contour.levels =</span> <span class="kw">c</span>(<span class="fl">0.9</span>,<span class="fl">0.95</span>,<span class="fl">0.99</span>), <span class="dt">col.contour =</span> <span class="kw">c</span>(<span class="st">&quot;gray50&quot;</span>,<span class="st">&quot;gray70&quot;</span>,<span class="st">&quot;gray90&quot;</span>), <span class="dt">ref =</span> <span class="kw">exp</span>(ps.iv<span class="op">$</span>TE.fixed))</a>
-<a class="sourceLine" id="cb32-2" data-line-number="2"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;p &lt; 0.01&quot;</span>, <span class="st">&quot;0.01 &lt; p &lt; 0.05&quot;</span>, <span class="st">&quot;0.05 &lt; p &lt; 0.10&quot;</span>, <span class="st">&quot;p &gt; 0.10&quot;</span>), <span class="dt">fill=</span><span class="kw">c</span>(<span class="st">&quot;gray50&quot;</span>,<span class="st">&quot;gray70&quot;</span>,<span class="st">&quot;gray90&quot;</span>, <span class="st">&#39;white&#39;</span>), <span class="dt">bg =</span> <span class="st">&#39;white&#39;</span>)</a></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="kw">funnel</span>(ps.iv, <span class="dt">comb.random =</span> F, <span class="dt">contour.levels =</span> <span class="kw">c</span>(<span class="fl">0.9</span>,<span class="fl">0.95</span>,<span class="fl">0.99</span>), <span class="dt">col.contour =</span> <span class="kw">c</span>(<span class="st">&quot;gray50&quot;</span>,<span class="st">&quot;gray70&quot;</span>,<span class="st">&quot;gray90&quot;</span>), <span class="dt">ref =</span> <span class="kw">exp</span>(ps.iv<span class="op">$</span>TE.fixed))</a>
+<a class="sourceLine" id="cb31-2" data-line-number="2"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;p &lt; 0.01&quot;</span>, <span class="st">&quot;0.01 &lt; p &lt; 0.05&quot;</span>, <span class="st">&quot;0.05 &lt; p &lt; 0.10&quot;</span>, <span class="st">&quot;p &gt; 0.10&quot;</span>), <span class="dt">fill=</span><span class="kw">c</span>(<span class="st">&quot;gray50&quot;</span>,<span class="st">&quot;gray70&quot;</span>,<span class="st">&quot;gray90&quot;</span>, <span class="st">&#39;white&#39;</span>), <span class="dt">bg =</span> <span class="st">&#39;white&#39;</span>)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-33-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="c.-statistical-test-for-funnel-plot-asymmetry" class="section level3 unnumbered">
 <h3>3c. Statistical test for funnel plot asymmetry</h3>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1">ps.bias &lt;-<span class="st"> </span><span class="kw">metabias</span>(ps.iv,<span class="dt">method.bias=</span><span class="st">&quot;linreg&quot;</span>,<span class="dt">plotit=</span>T) <span class="co"># T for TRUE </span></a>
-<a class="sourceLine" id="cb33-2" data-line-number="2"><span class="kw">abline</span>(<span class="dt">h=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>), <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;gray&quot;</span>,<span class="st">&quot;gray&quot;</span>))</a>
-<a class="sourceLine" id="cb33-3" data-line-number="3"><span class="co"># segments(0,ps.bias$estimate[1]- 1.96*ps.bias$estimate[2],0,ps.bias$estimate[1]+1.96*ps.bias$estimate[2]) </span></a>
-<a class="sourceLine" id="cb33-4" data-line-number="4"><span class="kw">arrows</span>(<span class="dv">0</span>,ps.bias<span class="op">$</span>estimate[<span class="dv">1</span>],<span class="dv">0</span>,ps.bias<span class="op">$</span>estimate[<span class="dv">1</span>]<span class="op">-</span><span class="fl">1.96</span><span class="op">*</span>ps.bias<span class="op">$</span>estimate[<span class="dv">2</span>]) </a>
-<a class="sourceLine" id="cb33-5" data-line-number="5"><span class="kw">arrows</span>(<span class="dv">0</span>,ps.bias<span class="op">$</span>estimate[<span class="dv">1</span>],<span class="dv">0</span>,ps.bias<span class="op">$</span>estimate[<span class="dv">1</span>]<span class="op">+</span><span class="fl">1.96</span><span class="op">*</span>ps.bias<span class="op">$</span>estimate[<span class="dv">2</span>])</a></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1">ps.bias &lt;-<span class="st"> </span><span class="kw">metabias</span>(ps.iv,<span class="dt">method.bias=</span><span class="st">&quot;linreg&quot;</span>,<span class="dt">plotit=</span>T) <span class="co"># T for TRUE </span></a>
+<a class="sourceLine" id="cb32-2" data-line-number="2"><span class="kw">abline</span>(<span class="dt">h=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>), <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;gray&quot;</span>,<span class="st">&quot;gray&quot;</span>))</a>
+<a class="sourceLine" id="cb32-3" data-line-number="3"><span class="co"># segments(0,ps.bias$estimate[1]- 1.96*ps.bias$estimate[2],0,ps.bias$estimate[1]+1.96*ps.bias$estimate[2]) </span></a>
+<a class="sourceLine" id="cb32-4" data-line-number="4"><span class="kw">arrows</span>(<span class="dv">0</span>,ps.bias<span class="op">$</span>estimate[<span class="dv">1</span>],<span class="dv">0</span>,ps.bias<span class="op">$</span>estimate[<span class="dv">1</span>]<span class="op">-</span><span class="fl">1.96</span><span class="op">*</span>ps.bias<span class="op">$</span>estimate[<span class="dv">2</span>]) </a>
+<a class="sourceLine" id="cb32-5" data-line-number="5"><span class="kw">arrows</span>(<span class="dv">0</span>,ps.bias<span class="op">$</span>estimate[<span class="dv">1</span>],<span class="dv">0</span>,ps.bias<span class="op">$</span>estimate[<span class="dv">1</span>]<span class="op">+</span><span class="fl">1.96</span><span class="op">*</span>ps.bias<span class="op">$</span>estimate[<span class="dv">2</span>])</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-34-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="d.-using-the-trim-and-fill-method" class="section level3 unnumbered">
 <h3>3d. Using the trim and fill method</h3>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1">ps.trimfill &lt;-<span class="st"> </span><span class="kw">trimfill</span>(ps<span class="op">$</span>logOR, ps<span class="op">$</span>selogOR, <span class="dt">sm=</span><span class="st">&quot;OR&quot;</span>, <span class="dt">backtransf =</span> T)</a></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1">ps.trimfill &lt;-<span class="st"> </span><span class="kw">trimfill</span>(ps<span class="op">$</span>logOR, ps<span class="op">$</span>selogOR, <span class="dt">sm=</span><span class="st">&quot;OR&quot;</span>, <span class="dt">backtransf =</span> T)</a></code></pre></div>
 <p>Compare the pooled effect size before and after trim and fill</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1">ps.trimfill</a></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1">ps.trimfill</a></code></pre></div>
 <pre><code>##                OR           95%-CI %W(random)
 ## 1          0.7500 [0.4313; 1.3041]        2.3
 ## 2          2.0700 [0.8131; 5.2699]        0.9

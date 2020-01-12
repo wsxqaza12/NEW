@@ -24,7 +24,7 @@
 <meta name="author" content="林先和 杜裕康 張齡尹" />
 
 
-<meta name="date" content="2020-01-11" />
+<meta name="date" content="2020-01-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -133,11 +133,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">[NTU 108] Meta analysis</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Description</a></li>
-<li class="chapter" data-level="1" data-path="strart-r.html"><a href="strart-r.html"><i class="fa fa-check"></i><b>1</b> Strart R</a><ul>
+<li class="chapter" data-level="" data-path="index1.html"><a href="index1.html"><i class="fa fa-check"></i>Description</a></li>
+<li class="chapter" data-level="1" data-path="start-r.html"><a href="start-r.html"><i class="fa fa-check"></i><b>1</b> Start R</a><ul>
 <li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1.1</b> Introduction</a><ul>
 <li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#installing-r-rstudio"><i class="fa fa-check"></i>Installing R &amp; RStudio</a></li>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#start-r"><i class="fa fa-check"></i>Start R!</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#start-r-1"><i class="fa fa-check"></i>Start R!</a></li>
 <li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#open-script"><i class="fa fa-check"></i>Open script</a></li>
 <li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#install-packages"><i class="fa fa-check"></i>Install packages</a></li>
 <li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#getting-help"><i class="fa fa-check"></i>Getting help</a></li>
@@ -430,8 +430,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## - Inverse variance method
 ## - DerSimonian-Laird estimator for tau^2</code></pre>
 </div>
-<div id="c.-forest-plot" class="section level4">
-<h4><span class="header-section-number">4.0.0.1</span> 1.1c. Forest plot</h4>
+<div id="c.-forest-plot" class="section level4 unnumbered">
+<h4>1.1c. Forest plot</h4>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">forest</span>(ismail.gen)</a></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-7-1.png" width="1152" /></p>
 <p>If the forest plot cannot be seen fully, we can save this plot as pdf via the following command.</p>
@@ -442,8 +442,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## quartz_off_screen 
 ##                 2</code></pre>
 </div>
-<div id="d.-subgroup-analysis-by-referral-source" class="section level4">
-<h4><span class="header-section-number">4.0.0.2</span> 1.1d. Subgroup Analysis by referral source</h4>
+<div id="d.-subgroup-analysis-by-referral-source" class="section level4 unnumbered">
+<h4>1.1d. Subgroup Analysis by referral source</h4>
 <p>Let’s conduct subgroup analysis to explore the potential sources of the huge observed heterogeneity</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">ismail.gen.sub&lt;-<span class="kw">metagen</span>(rate, ratese, <span class="dt">studlab =</span> AuthorYear, <span class="dt">byvar =</span> referralsource, <span class="dt">data =</span> ismail)</a>
 <a class="sourceLine" id="cb9-2" data-line-number="2">ismail.gen.sub</a></code></pre></div>
