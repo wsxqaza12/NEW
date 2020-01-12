@@ -24,7 +24,7 @@
 <meta name="author" content="林先和 杜裕康 張齡尹" />
 
 
-<meta name="date" content="2020-01-12" />
+<meta name="date" content="2020-01-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -240,7 +240,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="b.-contour-enhanced-funnel-plot" class="section level3 unnumbered">
 <h3>3b. Contour-enhanced funnel plot</h3>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="kw">funnel</span>(ps.iv, <span class="dt">comb.random =</span> F, <span class="dt">contour.levels =</span> <span class="kw">c</span>(<span class="fl">0.9</span>,<span class="fl">0.95</span>,<span class="fl">0.99</span>), <span class="dt">col.contour =</span> <span class="kw">c</span>(<span class="st">&quot;gray50&quot;</span>,<span class="st">&quot;gray70&quot;</span>,<span class="st">&quot;gray90&quot;</span>), <span class="dt">ref =</span> <span class="kw">exp</span>(ps.iv<span class="op">$</span>TE.fixed))</a>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="kw">funnel</span>(ps.iv, <span class="dt">comb.random =</span> F, <span class="dt">contour.levels =</span> <span class="kw">c</span>(<span class="fl">0.9</span>,<span class="fl">0.95</span>,<span class="fl">0.99</span>), <span class="dt">col.contour =</span> <span class="kw">c</span>(<span class="st">&quot;gray50&quot;</span>,<span class="st">&quot;gray70&quot;</span>,<span class="st">&quot;gray90&quot;</span>))</a>
 <a class="sourceLine" id="cb31-2" data-line-number="2"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;p &lt; 0.01&quot;</span>, <span class="st">&quot;0.01 &lt; p &lt; 0.05&quot;</span>, <span class="st">&quot;0.05 &lt; p &lt; 0.10&quot;</span>, <span class="st">&quot;p &gt; 0.10&quot;</span>), <span class="dt">fill=</span><span class="kw">c</span>(<span class="st">&quot;gray50&quot;</span>,<span class="st">&quot;gray70&quot;</span>,<span class="st">&quot;gray90&quot;</span>, <span class="st">&#39;white&#39;</span>), <span class="dt">bg =</span> <span class="st">&#39;white&#39;</span>)</a></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-33-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
