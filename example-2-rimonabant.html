@@ -24,7 +24,7 @@
 <meta name="author" content="林先和 杜裕康 張齡尹" />
 
 
-<meta name="date" content="2020-01-11" />
+<meta name="date" content="2020-01-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -134,11 +134,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">[NTU 108] Meta analysis</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Description</a></li>
-<li class="chapter" data-level="1" data-path="strart-r.html"><a href="strart-r.html"><i class="fa fa-check"></i><b>1</b> Strart R</a><ul>
+<li class="chapter" data-level="" data-path="index1.html"><a href="index1.html"><i class="fa fa-check"></i>Description</a></li>
+<li class="chapter" data-level="1" data-path="start-r.html"><a href="start-r.html"><i class="fa fa-check"></i><b>1</b> Start R</a><ul>
 <li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1.1</b> Introduction</a><ul>
 <li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#installing-r-rstudio"><i class="fa fa-check"></i>Installing R &amp; RStudio</a></li>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#start-r"><i class="fa fa-check"></i>Start R!</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#start-r-1"><i class="fa fa-check"></i>Start R!</a></li>
 <li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#open-script"><i class="fa fa-check"></i>Open script</a></li>
 <li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#install-packages"><i class="fa fa-check"></i>Install packages</a></li>
 <li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#getting-help"><i class="fa fa-check"></i>Getting help</a></li>
@@ -322,9 +322,6 @@ sm=“SMD”
 ## - Cohen&#39;s d (standardised mean difference)</code></pre>
 <p>The <code>method.smd = &quot;Cohen&quot;</code> option means that we are calculating the Cohen’s d (standardized mean difference) of each study.</p>
 <p>The different method is used to estimate the standardised mean difference: <code>method.smd=( &quot;Hedges&quot;, &quot;Cohen&quot;, or &quot;Glass&quot;)</code></p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1">knitr<span class="op">::</span><span class="kw">kable</span>(</a>
-<a class="sourceLine" id="cb26-2" data-line-number="2">  tibble<span class="op">::</span><span class="kw">tibble</span>(<span class="st">`</span><span class="dt">Method</span><span class="st">`</span>=<span class="kw">c</span>(<span class="st">&quot; Hedges’g (default) &quot;</span>,<span class="st">&quot;Cohen’s d &quot;</span>, <span class="st">&quot;Glass’ delta&quot;</span>), <span class="st">`</span><span class="dt">R code</span><span class="st">`</span>=<span class="kw">c</span>(<span class="st">&#39;method.smd =&quot;Hedges&quot;&#39;</span>, <span class="st">&#39;method.smd =&quot;Cohen&quot;&#39;</span>, <span class="st">&#39;method.smd =&quot;Glass&quot;&#39;</span>)))<span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb26-3" data-line-number="3"><span class="st">  </span>kableExtra<span class="op">::</span><span class="kw">kable_styling</span>(<span class="dt">full_width =</span> F, <span class="dt">position =</span> <span class="st">&quot;left&quot;</span>, <span class="dt">font_size =</span> <span class="dv">14</span>)</a></code></pre></div>
 <table class="table" style="font-size: 14px; width: auto !important; ">
 <thead>
 <tr>
@@ -369,11 +366,11 @@ method.smd =“Glass”
 <p>Just like what we did in the binary data, we can use metagen for generic (pre-calculated) effect size and standard error (or lower and upper limits) on continuous data. Note that for difference in means there is no need to log transform the data.
 <strong>Two variables:</strong> <code>metagen(logRR, selogRR, studlab=trialnam,sm=&quot;RR&quot;,data=bcg)</code></p>
 <p>In the command window, type:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1">rimonabant<span class="op">$</span>TE &lt;-<span class="st"> </span>rimonabant<span class="op">$</span>txef <span class="op">-</span><span class="st"> </span>rimonabant<span class="op">$</span>cnef</a>
-<a class="sourceLine" id="cb27-2" data-line-number="2">rimonabant<span class="op">$</span>seTE &lt;-<span class="st"> </span><span class="kw">sqrt</span>(rimonabant<span class="op">$</span>txsd<span class="op">^</span><span class="dv">2</span><span class="op">/</span>rimonabant<span class="op">$</span>txn <span class="op">+</span><span class="st"> </span>rimonabant<span class="op">$</span>cnsd<span class="op">^</span><span class="dv">2</span><span class="op">/</span>rimonabant<span class="op">$</span>cnn)</a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1">rimonabant<span class="op">$</span>TE &lt;-<span class="st"> </span>rimonabant<span class="op">$</span>txef <span class="op">-</span><span class="st"> </span>rimonabant<span class="op">$</span>cnef</a>
+<a class="sourceLine" id="cb26-2" data-line-number="2">rimonabant<span class="op">$</span>seTE &lt;-<span class="st"> </span><span class="kw">sqrt</span>(rimonabant<span class="op">$</span>txsd<span class="op">^</span><span class="dv">2</span><span class="op">/</span>rimonabant<span class="op">$</span>txn <span class="op">+</span><span class="st"> </span>rimonabant<span class="op">$</span>cnsd<span class="op">^</span><span class="dv">2</span><span class="op">/</span>rimonabant<span class="op">$</span>cnn)</a></code></pre></div>
 <p>(This generates the necessary input for the two-variable command)</p>
 <p>Then type:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1">rimonabant.iv<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">metagen</span>(TE, seTE, <span class="dt">studlab =</span> study, <span class="dt">sm=</span><span class="st">&quot;MD&quot;</span>, <span class="dt">data =</span> rimonabant)</a></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1">rimonabant.iv<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">metagen</span>(TE, seTE, <span class="dt">studlab =</span> study, <span class="dt">sm=</span><span class="st">&quot;MD&quot;</span>, <span class="dt">data =</span> rimonabant)</a></code></pre></div>
 </div>
 </div>
             </section>
